@@ -2,9 +2,11 @@
 
 A Desktop calculator app built using Visual Studio 2022
 
-![A Screenshot of Calculator App](https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/calculatorapp.jpg)
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/calculatorapp.jpg" width = "250" height = "320" >
 
-![A Screenshot of oncoming Science Calculator](https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sciencecalculator.jpg)
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sciencecalculator.jpg" width="400" height="350">
+
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sidebar.jpg" width="400" height="350">
 
 ## Features Planning
 - ~~Standard calculator function~~
