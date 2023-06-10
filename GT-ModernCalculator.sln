@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT-ModernCalculator", "GT-ModernCalculator\GT-ModernCalculator.csproj", "{767C946B-DD0E-495F-980E-C03399323AFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{767C946B-DD0E-495F-980E-C03399323AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767C946B-DD0E-495F-980E-C03399323AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767C946B-DD0E-495F-980E-C03399323AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767C946B-DD0E-495F-980E-C03399323AFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCC4E8A0-7D80-4805-B97E-BE69CED9267D}
+	EndGlobalSection
+EndGlobal
