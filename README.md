@@ -11,7 +11,12 @@ A Desktop calculator app built using Visual Studio 2022
 
 ## Changelog
 
+### V.1.7.2-Release
+- Add Sidebar for oncoming calculator function 
+- Working sidebar animation
+- Fix output glitch
+- Fix button glitch
+
 ### V.1.0.0-Release
  *First release*
-
 - Standard calculator function
