@@ -4,6 +4,7 @@ namespace GT_ModernCalculator
 {
     public partial class StandardCalculator : Form
     {
+        //private ScienceCalculator scienceCalculatorForm;
         private bool isAnimating = false;
         private int targetWidth;
         private int currentWidth;
@@ -13,17 +14,41 @@ namespace GT_ModernCalculator
         private string operation = "";
         private bool isOperationPerformed = false;
         private bool isModSelected = false;
+        private bool switchingToAnotherForm = false;
+        private bool isClosing = false;
+
 
         public StandardCalculator()
         {
 
             InitializeComponent();
+            //scienceCalculatorForm = new ScienceCalculator();
             //Display App Product Version
             LabelVersionStandard.Text = "V." + ProductVersion + "-Release";
             animationTimer = new System.Windows.Forms.Timer();
             animationTimer.Interval = 10; // Adjust this value to control the animation speed
             animationTimer.Tick += AnimationTimer_Tick;
+
+
         }
+        //Switch between forms
+
+        private void BtnScience_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the ScienceCalculator form
+            ScienceCalculator scienceCalculatorForm = new ScienceCalculator();
+
+            // Hide the current form
+            this.Hide();
+
+            // Show the ScienceCalculator form
+            scienceCalculatorForm.ShowDialog();
+
+            // Close the current form
+            this.Close();
+        }
+
+        // Calculation function
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -376,7 +401,7 @@ namespace GT_ModernCalculator
         {
             if (!isAnimating)
             {
-                if (panelSidebar.Visible)
+                if (panelSidebarS.Visible)
                 {
                     // Close the sidebar
                     StartSidebarAnimation(false);
@@ -384,7 +409,7 @@ namespace GT_ModernCalculator
                 else
                 {
                     // Open the sidebar
-                    panelSidebar.Visible = true;
+                    panelSidebarS.Visible = true;
                     SubscribeButtonClickEvents();
                     SubscribeFormClickEvent();
                     StartSidebarAnimation(true);
@@ -405,7 +430,7 @@ namespace GT_ModernCalculator
         }
         private void CloseSidebarOnClick(object? sender, EventArgs e)
         {
-            panelSidebar.Visible = false;
+            panelSidebarS.Visible = false;
             UnsubscribeEvents();
         }
         private void UnsubscribeEvents()
@@ -426,17 +451,17 @@ namespace GT_ModernCalculator
             isAnimating = true; // Set the flag to true when the animation starts
         }
 
-        private void AnimationTimer_Tick(object sender, EventArgs e)
+        private void AnimationTimer_Tick(object? sender, EventArgs e)
         {
             bool open = (bool)animationTimer.Tag;
 
-            if (open && panelSidebar.Width < targetWidth)
+            if (open && panelSidebarS.Width < targetWidth)
             {
-                panelSidebar.Width += 5; // Adjust the increment value for a smooth animation
+                panelSidebarS.Width += 5; // Adjust the increment value for a smooth animation
             }
-            else if (!open && panelSidebar.Width > targetWidth)
+            else if (!open && panelSidebarS.Width > targetWidth)
             {
-                panelSidebar.Width -= 5; // Adjust the increment value for a smooth animation
+                panelSidebarS.Width -= 5; // Adjust the increment value for a smooth animation
             }
             else
             {
@@ -445,10 +470,33 @@ namespace GT_ModernCalculator
 
                 if (!open)
                 {
-                    panelSidebar.Visible = false; // Hide the sidebar after closing animation
+                    panelSidebarS.Visible = false; // Hide the sidebar after closing animation
                 }
 
                 isAnimating = false; // Reset the flag when the animation is complete
+            }
+        }
+        // Exit confirmation
+        private void StandardCalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isClosing && e.CloseReason == CloseReason.UserClosing)
+            {
+                isClosing = true;
+
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;  // Allow the form to close
+                    isClosing = false; // Reset the flag
+
+                    // Exit the application
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;   // Cancel the closing action
+                    isClosing = false; // Reset the flag
+                }
             }
         }
 

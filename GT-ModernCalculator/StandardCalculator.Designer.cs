@@ -58,7 +58,7 @@
             BtnDot = new Button();
             BtnPlusMinus = new Button();
             toolTip1 = new ToolTip(components);
-            panelSidebar = new Panel();
+            panelSidebarS = new Panel();
             BtnFormTemp = new Button();
             BtnFormScience = new Button();
             BtnFormCalculator = new Button();
@@ -66,7 +66,7 @@
             toolTip3 = new ToolTip(components);
             toolTip4 = new ToolTip(components);
             LabelVersionStandard = new Label();
-            panelSidebar.SuspendLayout();
+            panelSidebarS.SuspendLayout();
             SuspendLayout();
             // 
             // BtnMenu
@@ -505,17 +505,17 @@
             BtnPlusMinus.UseVisualStyleBackColor = false;
             BtnPlusMinus.Click += PlusMinusButton_Click;
             // 
-            // panelSidebar
+            // panelSidebarS
             // 
-            panelSidebar.BackColor = Color.FromArgb(24, 24, 24);
-            panelSidebar.Controls.Add(BtnFormTemp);
-            panelSidebar.Controls.Add(BtnFormScience);
-            panelSidebar.Controls.Add(BtnFormCalculator);
-            panelSidebar.Location = new Point(2, 48);
-            panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(63, 497);
-            panelSidebar.TabIndex = 30;
-            panelSidebar.Visible = false;
+            panelSidebarS.BackColor = Color.FromArgb(24, 24, 24);
+            panelSidebarS.Controls.Add(BtnFormTemp);
+            panelSidebarS.Controls.Add(BtnFormScience);
+            panelSidebarS.Controls.Add(BtnFormCalculator);
+            panelSidebarS.Location = new Point(2, 48);
+            panelSidebarS.Name = "panelSidebarS";
+            panelSidebarS.Size = new Size(63, 497);
+            panelSidebarS.TabIndex = 30;
+            panelSidebarS.Visible = false;
             // 
             // BtnFormTemp
             // 
@@ -542,6 +542,7 @@
             BtnFormScience.TabIndex = 1;
             toolTip3.SetToolTip(BtnFormScience, "Scientific Calculator");
             BtnFormScience.UseVisualStyleBackColor = true;
+            BtnFormScience.Click += BtnScience_Click;
             // 
             // BtnFormCalculator
             // 
@@ -571,12 +572,11 @@
             // 
             // StandardCalculator
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(532, 542);
             Controls.Add(LabelVersionStandard);
-            Controls.Add(panelSidebar);
+            Controls.Add(panelSidebarS);
             Controls.Add(BtnPlusMinus);
             Controls.Add(BtnDot);
             Controls.Add(BtnZero);
@@ -606,7 +606,8 @@
             Controls.Add(BtnMenu);
             Name = "StandardCalculator";
             Text = "GT-Calculator";
-            panelSidebar.ResumeLayout(false);
+            FormClosing += StandardCalculator_FormClosing;
+            panelSidebarS.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -640,7 +641,7 @@
         private Button BtnDot;
         private Button BtnPlusMinus;
         private ToolTip toolTip1;
-        private Panel panelSidebar;
+        private Panel panelSidebarS;
         private Button BtnFormScience;
         private Button BtnFormCalculator;
         private Button BtnFormTemp;

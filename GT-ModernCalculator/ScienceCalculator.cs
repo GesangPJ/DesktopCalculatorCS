@@ -20,8 +20,11 @@ namespace GT_ModernCalculator
         private string operation = "";
         private bool isOperationPerformed = false;
         private bool isModSelected = false;
-
-
+        private bool isAnimating = false;
+        private int targetWidth;
+        private System.Windows.Forms.Timer animationTimer;
+        private bool switchingToAnotherForm = false;
+        private bool isClosing = false;
 
         public ScienceCalculator()
         {
@@ -29,9 +32,30 @@ namespace GT_ModernCalculator
             InitializeComponent();
             //Display App Product Version
             LabelVersion.Text = "V." + ProductVersion + "-Release";
+            //Sidebar Animation render
+            animationTimer = new System.Windows.Forms.Timer();
+            animationTimer.Interval = 10; // Adjust this value to control the animation speed
+            animationTimer.Tick += AnimationTimer_Tick;
 
 
         }
+        // Switch between Forms of calculator
+        private void BtnStandard_Click(object sender, EventArgs e)
+        {
+            switchingToAnotherForm = true;
+            // Create an instance of the ScienceCalculator form
+            StandardCalculator standardCalculatorForm = new StandardCalculator();
+
+            this.Hide();
+
+            // Show the ScienceCalculator form
+            standardCalculatorForm.ShowDialog();
+
+            // Close the current form
+            this.Close();
+
+        }
+
         //When number button clicked
         private void NumberButton_Click(object sender, EventArgs e)
         {
@@ -744,6 +768,111 @@ namespace GT_ModernCalculator
                 TxtOut0S.Text += ".";
             }
         }
+        private void BtnSMenu_Click(object sender, EventArgs e)
+        {
+            if (!isAnimating)
+            {
+                if (panelSidebarS.Visible)
+                {
+                    // Close the sidebar
+                    StartSidebarAnimation(false);
+                }
+                else
+                {
+                    // Open the sidebar
+                    panelSidebarS.Visible = true;
+                    SubscribeButtonClickEvents();
+                    SubscribeFormClickEvent();
+                    StartSidebarAnimation(true);
+                }
+            }
+        }
+        private void SubscribeButtonClickEvents()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != BtnSMenu)
+                    control.Click += CloseSidebarOnClick;
+            }
+        }
+        private void SubscribeFormClickEvent()
+        {
+            this.Click += CloseSidebarOnClick;
+        }
+        private void CloseSidebarOnClick(object? sender, EventArgs e)
+        {
+            panelSidebarS.Visible = false;
+            UnsubscribeEvents();
+        }
+        private void UnsubscribeEvents()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != BtnSMenu)
+                    control.Click -= CloseSidebarOnClick;
+            }
+            this.Click -= CloseSidebarOnClick;
+        }
+        //Sidebar Animation
+        private void StartSidebarAnimation(bool open)
+        {
+            targetWidth = open ? 60 : 0; // Adjust the target width based on open or close
+            animationTimer.Tag = open;
+            animationTimer.Start();
+            isAnimating = true; // Set the flag to true when the animation starts
+        }
+
+        private void AnimationTimer_Tick(object? sender, EventArgs e)
+        {
+            bool open = (bool)animationTimer.Tag;
+
+            if (open && panelSidebarS.Width < targetWidth)
+            {
+                panelSidebarS.Width += 5; // Adjust the increment value for a smooth animation
+            }
+            else if (!open && panelSidebarS.Width > targetWidth)
+            {
+                panelSidebarS.Width -= 5; // Adjust the increment value for a smooth animation
+            }
+            else
+            {
+                animationTimer.Stop(); // Stop the timer when the animation is complete
+                UnsubscribeEvents(); // Unsubscribe the events
+
+                if (!open)
+                {
+                    panelSidebarS.Visible = false; // Hide the sidebar after closing animation
+                }
+
+                isAnimating = false; // Reset the flag when the animation is complete
+            }
+        }
+        // Exit confirmation
+        private void ScienceCalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isClosing && e.CloseReason == CloseReason.UserClosing)
+            {
+                isClosing = true;
+
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;  // Allow the form to close
+                    isClosing = false; // Reset the flag
+
+                    // Exit the application
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;   // Cancel the closing action
+                    isClosing = false; // Reset the flag
+                }
+            }
+        }
+
+
+
 
     }
 }

@@ -8,10 +8,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Title>Modern Calculator</Title>
-    <Version>1.7.2</Version>
+    <Version>2.1.7</Version>
     <Copyright>©2023 GESANG TECHNOLOGY</Copyright>
     <Company>GESANG TECHNOLOGY</Company>
     <Authors>G-PAUDRA</Authors>
+    <UseWPF>True</UseWPF>
+    <StartupObject></StartupObject>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>

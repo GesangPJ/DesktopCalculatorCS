@@ -72,6 +72,11 @@
             BtnInX = new Button();
             LabelVersion = new Label();
             BtnPie = new Button();
+            panelSidebarS = new Panel();
+            BtnFormTemp = new Button();
+            BtnFormScience = new Button();
+            BtnFormCalculator = new Button();
+            panelSidebarS.SuspendLayout();
             SuspendLayout();
             // 
             // TxtOut0S
@@ -102,7 +107,7 @@
             // 
             // BtnSMenu
             // 
-            BtnSMenu.BackColor = Color.FromArgb(16, 16, 16);
+            BtnSMenu.BackColor = Color.FromArgb(32, 32, 32);
             BtnSMenu.FlatAppearance.BorderSize = 0;
             BtnSMenu.FlatStyle = FlatStyle.Flat;
             BtnSMenu.Image = (Image)resources.GetObject("BtnSMenu.Image");
@@ -112,6 +117,7 @@
             BtnSMenu.Size = new Size(63, 50);
             BtnSMenu.TabIndex = 5;
             BtnSMenu.UseVisualStyleBackColor = false;
+            BtnSMenu.Click += BtnSMenu_Click;
             // 
             // BtnSClearEntry
             // 
@@ -776,12 +782,61 @@
             BtnPie.UseVisualStyleBackColor = false;
             BtnPie.Click += PiButton_Click;
             // 
+            // panelSidebarS
+            // 
+            panelSidebarS.BackColor = Color.FromArgb(24, 24, 24);
+            panelSidebarS.Controls.Add(BtnFormTemp);
+            panelSidebarS.Controls.Add(BtnFormScience);
+            panelSidebarS.Controls.Add(BtnFormCalculator);
+            panelSidebarS.Location = new Point(-2, 45);
+            panelSidebarS.Name = "panelSidebarS";
+            panelSidebarS.Size = new Size(63, 569);
+            panelSidebarS.TabIndex = 63;
+            panelSidebarS.Visible = false;
+            // 
+            // BtnFormTemp
+            // 
+            BtnFormTemp.FlatAppearance.BorderSize = 0;
+            BtnFormTemp.FlatAppearance.MouseOverBackColor = Color.Silver;
+            BtnFormTemp.FlatStyle = FlatStyle.Flat;
+            BtnFormTemp.Image = (Image)resources.GetObject("BtnFormTemp.Image");
+            BtnFormTemp.Location = new Point(0, 167);
+            BtnFormTemp.Name = "BtnFormTemp";
+            BtnFormTemp.Size = new Size(60, 70);
+            BtnFormTemp.TabIndex = 2;
+            BtnFormTemp.UseVisualStyleBackColor = true;
+            // 
+            // BtnFormScience
+            // 
+            BtnFormScience.FlatAppearance.BorderSize = 0;
+            BtnFormScience.FlatAppearance.MouseOverBackColor = Color.Silver;
+            BtnFormScience.FlatStyle = FlatStyle.Flat;
+            BtnFormScience.Image = (Image)resources.GetObject("BtnFormScience.Image");
+            BtnFormScience.Location = new Point(0, 84);
+            BtnFormScience.Name = "BtnFormScience";
+            BtnFormScience.Size = new Size(60, 70);
+            BtnFormScience.TabIndex = 1;
+            BtnFormScience.UseVisualStyleBackColor = true;
+            // 
+            // BtnFormCalculator
+            // 
+            BtnFormCalculator.FlatAppearance.BorderSize = 0;
+            BtnFormCalculator.FlatAppearance.MouseOverBackColor = Color.Silver;
+            BtnFormCalculator.FlatStyle = FlatStyle.Flat;
+            BtnFormCalculator.Image = (Image)resources.GetObject("BtnFormCalculator.Image");
+            BtnFormCalculator.Location = new Point(0, 8);
+            BtnFormCalculator.Name = "BtnFormCalculator";
+            BtnFormCalculator.Size = new Size(60, 70);
+            BtnFormCalculator.TabIndex = 0;
+            BtnFormCalculator.UseVisualStyleBackColor = true;
+            BtnFormCalculator.Click += BtnStandard_Click;
+            // 
             // ScienceCalculator
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(800, 614);
+            Controls.Add(panelSidebarS);
             Controls.Add(BtnPie);
             Controls.Add(LabelVersion);
             Controls.Add(BtnInX);
@@ -827,6 +882,8 @@
             Controls.Add(BtnSMenu);
             Name = "ScienceCalculator";
             Text = "ScienceCalculator";
+            FormClosing += ScienceCalculator_FormClosing;
+            panelSidebarS.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -876,5 +933,9 @@
         private Button BtnInX;
         private Label LabelVersion;
         private Button BtnPie;
+        private Panel panelSidebarS;
+        private Button BtnFormTemp;
+        private Button BtnFormScience;
+        private Button BtnFormCalculator;
     }
 }
