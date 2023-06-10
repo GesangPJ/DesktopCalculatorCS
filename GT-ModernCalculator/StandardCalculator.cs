@@ -10,7 +10,10 @@
 
         public StandardCalculator()
         {
+
             InitializeComponent();
+            //Display App Product Version
+            LabelVersionStandard.Text = "V."+ ProductVersion + "-Release";
         }
         private void NumberButton_Click(object sender, EventArgs e)
         {
@@ -359,6 +362,44 @@
             }
         }
 
+        //Sidebar Panel function
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            if (panelSidebar.Visible)
+                panelSidebar.Visible = false;
+            else
+            {
+                panelSidebar.Visible = true;
+                SubscribeButtonClickEvents();
+                SubscribeFormClickEvent();
+            }
+        }
+        private void SubscribeButtonClickEvents()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != BtnMenu)
+                    control.Click += CloseSidebarOnClick;
+            }
+        }
+        private void SubscribeFormClickEvent()
+        {
+            this.Click += CloseSidebarOnClick;
+        }
+        private void CloseSidebarOnClick(object? sender, EventArgs e)
+        {
+            panelSidebar.Visible = false;
+            UnsubscribeEvents();
+        }
+        private void UnsubscribeEvents()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != BtnMenu)
+                    control.Click -= CloseSidebarOnClick;
+            }
+            this.Click -= CloseSidebarOnClick;
+        }
 
 
 

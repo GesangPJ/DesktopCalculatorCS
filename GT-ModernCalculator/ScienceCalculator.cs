@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GT_ModernCalculator
 {
     public partial class ScienceCalculator : Form
@@ -23,12 +24,9 @@ namespace GT_ModernCalculator
         public ScienceCalculator()
         {
             InitializeComponent();
-            //get version info
-            string productVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            //format version info
-            string versionformat = "V." + productVersion + "-Release";
-            //display it in label
-            LabelVersion.Text = versionformat;
+            //Display App Product Version
+            LabelVersion.Text = "V." + ProductVersion + "-Release";
+          
         }
         //When number button clicked
         private void NumberButton_Click(object sender, EventArgs e)
