@@ -71,7 +71,7 @@
             // 
             // BtnMenu
             // 
-            BtnMenu.BackColor = Color.FromArgb(16, 16, 16);
+            BtnMenu.BackColor = Color.FromArgb(32, 32, 32);
             BtnMenu.FlatAppearance.BorderSize = 0;
             BtnMenu.FlatStyle = FlatStyle.Flat;
             BtnMenu.Image = (Image)resources.GetObject("BtnMenu.Image");
@@ -511,15 +511,16 @@
             panelSidebar.Controls.Add(BtnFormTemp);
             panelSidebar.Controls.Add(BtnFormScience);
             panelSidebar.Controls.Add(BtnFormCalculator);
-            panelSidebar.Location = new Point(2, 55);
+            panelSidebar.Location = new Point(2, 48);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(63, 474);
+            panelSidebar.Size = new Size(63, 497);
             panelSidebar.TabIndex = 30;
             panelSidebar.Visible = false;
             // 
             // BtnFormTemp
             // 
             BtnFormTemp.FlatAppearance.BorderSize = 0;
+            BtnFormTemp.FlatAppearance.MouseOverBackColor = Color.Silver;
             BtnFormTemp.FlatStyle = FlatStyle.Flat;
             BtnFormTemp.Image = (Image)resources.GetObject("BtnFormTemp.Image");
             BtnFormTemp.Location = new Point(0, 167);
@@ -532,6 +533,7 @@
             // BtnFormScience
             // 
             BtnFormScience.FlatAppearance.BorderSize = 0;
+            BtnFormScience.FlatAppearance.MouseOverBackColor = Color.Silver;
             BtnFormScience.FlatStyle = FlatStyle.Flat;
             BtnFormScience.Image = (Image)resources.GetObject("BtnFormScience.Image");
             BtnFormScience.Location = new Point(0, 84);
@@ -544,6 +546,7 @@
             // BtnFormCalculator
             // 
             BtnFormCalculator.FlatAppearance.BorderSize = 0;
+            BtnFormCalculator.FlatAppearance.MouseOverBackColor = Color.Silver;
             BtnFormCalculator.FlatStyle = FlatStyle.Flat;
             BtnFormCalculator.Image = (Image)resources.GetObject("BtnFormCalculator.Image");
             BtnFormCalculator.Location = new Point(0, 8);
@@ -559,7 +562,7 @@
             LabelVersionStandard.FlatStyle = FlatStyle.Flat;
             LabelVersionStandard.Font = new Font("Ubuntu Light", 8.999999F, FontStyle.Regular, GraphicsUnit.Point);
             LabelVersionStandard.ForeColor = Color.White;
-            LabelVersionStandard.Location = new Point(455, 524);
+            LabelVersionStandard.Location = new Point(405, 524);
             LabelVersionStandard.Margin = new Padding(0);
             LabelVersionStandard.Name = "LabelVersionStandard";
             LabelVersionStandard.Size = new Size(18, 21);

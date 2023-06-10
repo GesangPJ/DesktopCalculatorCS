@@ -754,7 +754,7 @@
             LabelVersion.AutoSize = true;
             LabelVersion.Font = new Font("Ubuntu Light", 8.999999F, FontStyle.Regular, GraphicsUnit.Point);
             LabelVersion.ForeColor = Color.White;
-            LabelVersion.Location = new Point(705, 584);
+            LabelVersion.Location = new Point(682, 584);
             LabelVersion.Margin = new Padding(0);
             LabelVersion.Name = "LabelVersion";
             LabelVersion.Size = new Size(18, 21);

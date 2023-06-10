@@ -231,13 +231,10 @@
         EMIXO9QxybI/OBQAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolTip4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>356, 17</value>
-  </metadata>
   <data name="BtnFormTemp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAgVJREFUWEftlr9L1WEUhy8qTalDNNSfEIlpi1QERUaDi17ExcT/IF0catGxX0NW
+        DAAACwwBP0AiyAAAAgVJREFUWEftlr9L1WEUhy8qTalDNNSfEIlpi1QERUaDi17ExcT/IF0catGxX0NW
         ENXmoARNcocgdGtxiGb7QZMNRaRFZcLpOe/5JN6LxqXvey8EPvDgOef9vp/3xfvlammff8HMTmIF1+Ui
         9mi5sXDQBfyBtXzH83qsMXBAG7730+ARHsGj+NgH8A7b9Hh+CD+VjjFbxVaNfd6Kr30B+jTOD+HlOMOe
         arSNz2LJyhrlh/DhOMOeaLSNz2LJXuA8ntZSPgit5wJ/eKClfBBazwVu4yB2aikfhFZdgJ9deFz1zgsM
@@ -249,13 +246,13 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolTip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>243, 17</value>
+  <metadata name="toolTip4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>356, 17</value>
   </metadata>
   <data name="BtnFormScience.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAd1JREFUWEftlj1LQmEcxcW+gCDZVBE0SIPQy1RzkYtQ4FRDfoMc/AS1NgVN9gVc
+        DAAACwwBP0AiyAAAAd1JREFUWEftlj1LQmEcxcW+gCDZVBE0SIPQy1RzkYtQ4FRDfoMc/AS1NgVN9gVc
         XMJaGlrqC/Sy1RYt0SvUUv/OeZ7TJRT1pjcr8Ac/qHPPc+5NSov1+TeYWRFWQlrUsejA6C0My62ORQdG
         0/DEzZttwXydzAg7aR2LFgzz5SV5RQHM/CWrKIoejvt79B/g9x+g1S9hTx6gFT15gGPIr7/KjPzoA+z7
         e9iiogBm/pLVFEULhhPwHr7DEcUByEYhYSehODowuuvmzfYUNYBrNV+xsqJowGDO79oLnFDcAK+pQ3KK
@@ -266,13 +263,13 @@
         VG7Nar7PXyIW+wCy9gQhDkbrhAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>130, 17</value>
+  <metadata name="toolTip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>243, 17</value>
   </metadata>
   <data name="BtnFormCalculator.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAexJREFUWEftljFOw0AQRUMdRNLlCCBETyAFBYGeSHQcAu5BRBvgACBOgYQUREHF
+        DAAACwwBP0AiyAAAAexJREFUWEftljFOw0AQRUMdRNLlCCBETyAFBYGeSHQcAu5BRBvgACBOgYQUREHF
         EagDDRKKQFr+H387jmOvTWKLgjzpyzvjn9nRGpupLVmShnNuB7qHPqBFYQ3Waqu8Hxh3oW+obL6g/CZg
         YrfkHKornUpgc05hKrhdh/pmdG6odDYwhccebY71HnQNNZUyaCIKM4GFTZCxUtnIOFUU4W2QdT2lDOVy
         GyCy5nvlMyMuHegGemUODKFLyE7CMkDrJnQF3cXE33aSXi/yhUUHQTTDfoq3G0QzDJJeL/KFRRvQEfTI
@@ -285,11 +282,5 @@
   </data>
   <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>130, 17</value>
-  </metadata>
-  <metadata name="toolTip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>243, 17</value>
-  </metadata>
-  <metadata name="toolTip4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>356, 17</value>
   </metadata>
 </root>

@@ -13,7 +13,7 @@
 
             InitializeComponent();
             //Display App Product Version
-            LabelVersionStandard.Text = "V."+ ProductVersion + "-Release";
+            LabelVersionStandard.Text = "V." + ProductVersion + "-Release";
         }
         private void NumberButton_Click(object sender, EventArgs e)
         {

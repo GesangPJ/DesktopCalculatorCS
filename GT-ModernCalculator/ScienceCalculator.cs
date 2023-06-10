@@ -26,7 +26,7 @@ namespace GT_ModernCalculator
             InitializeComponent();
             //Display App Product Version
             LabelVersion.Text = "V." + ProductVersion + "-Release";
-          
+
         }
         //When number button clicked
         private void NumberButton_Click(object sender, EventArgs e)
@@ -699,7 +699,7 @@ namespace GT_ModernCalculator
                     return operation;
             }
         }
-        
+
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(TxtOut1S.Text))
@@ -726,7 +726,7 @@ namespace GT_ModernCalculator
                 }
             }
         }
-        
+
         private void DecimalButton_Click(object sender, EventArgs e)
         {
             if (!TxtOut0S.Text.Contains("."))
