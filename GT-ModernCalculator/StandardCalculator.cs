@@ -45,7 +45,6 @@
             }
         }
 
-
         private void OperationButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -117,81 +116,6 @@
                     return;
                 }
             }
-            else if (operation == "Hex")
-            {
-                double currentNumber;
-
-                if (double.TryParse(TxtOut0.Text, out currentNumber))
-                {
-                    string result = Convert.ToString((long)currentNumber, 16);
-                    TxtOut0.Text = result;
-                    TxtOut1.Text = $"Hex({currentNumber})";
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a valid number.");
-                    ClearAll();
-                    return;
-                }
-            }
-            else if (operation == "Oct")
-            {
-                double currentNumber;
-
-                if (double.TryParse(TxtOut0.Text, out currentNumber))
-                {
-                    string result = Convert.ToString((long)currentNumber, 8);
-                    TxtOut0.Text = result;
-                    TxtOut1.Text = $"Oct({currentNumber})";
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a valid number.");
-                    ClearAll();
-                    return;
-                }
-            }
-            else if (operation == "Bin")
-            {
-                double currentNumber;
-
-                if (double.TryParse(TxtOut0.Text, out currentNumber))
-                {
-                    string result = Convert.ToString((long)currentNumber, 2);
-                    TxtOut0.Text = result;
-                    TxtOut1.Text = $"Bin({currentNumber})";
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a valid number.");
-                    ClearAll();
-                    return;
-                }
-            }
-            else if (operation == "Mod")
-            {
-                if (!string.IsNullOrEmpty(TxtOut0.Text))
-                {
-                    double currentNumber;
-
-                    if (double.TryParse(TxtOut0.Text, out currentNumber))
-                    {
-                        TxtOut1.Text += currentNumber.ToString() + " Mod ";
-                        isModSelected = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid input! Please enter a valid number.");
-                        ClearAll();
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a number before selecting Mod operation.");
-                    return;
-                }
-            }
             else
             {
                 if (TxtOut1.Text.Length >= 2)
@@ -210,27 +134,6 @@
 
             isOperationPerformed = true;
         }
-        private void BtnBin_Click(object sender, EventArgs e)
-        {
-            operation = "Bin";
-            OperationButton_Click(sender, e);
-        }
-        private void BtnMod_Click(object sender, EventArgs e)
-        {
-            operation = "Mod";
-            OperationButton_Click(sender, e);
-        }
-        private void BtnHex_Click(object sender, EventArgs e)
-        {
-            operation = "Hex";
-            OperationButton_Click(sender, e);
-        }
-        private void BtnOct_Click(object sender, EventArgs e)
-        {
-            operation = "Oct";
-            OperationButton_Click(sender, e);
-        }
-
         private void EqualButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(TxtOut1.Text) && !string.IsNullOrEmpty(TxtOut0.Text))
@@ -285,34 +188,6 @@
 
             isOperationPerformed = true;
         }
-
-
-        private void ModButton_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(TxtOut0.Text))
-            {
-                double currentNumber;
-
-                if (double.TryParse(TxtOut0.Text, out currentNumber))
-                {
-                    TxtOut1.Text = currentNumber.ToString() + " Mod ";
-                    operation = "Mod";
-                    isOperationPerformed = true;
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a valid number.");
-                    ClearAll();
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid input! Please enter a number before selecting Mod operation.");
-                return;
-            }
-        }
-
 
         private void OneOverXButton_Click(object sender, EventArgs e)
         {
