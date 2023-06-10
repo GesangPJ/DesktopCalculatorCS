@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,14 @@ namespace GT_ModernCalculator
         private bool isModSelected = false;
 
 
+
         public ScienceCalculator()
         {
+
             InitializeComponent();
             //Display App Product Version
             LabelVersion.Text = "V." + ProductVersion + "-Release";
+
 
         }
         //When number button clicked
@@ -209,22 +213,6 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
-            else if (operation == "π")
-            {
-                double currentNumber;
-
-                if (double.TryParse(TxtOut0S.Text, out currentNumber))
-                {
-                    double result = currentNumber * Math.PI;
-                    TxtOut0S.Text = result.ToString();
-                    TxtOut1S.Text = $"π({currentNumber})";
-                }
-                else
-                {
-                    TxtOut0S.Text = Math.PI.ToString();
-                    TxtOut1S.Text = $"π({currentNumber})";
-                }
-            }
             else if (operation == "In x")
             {
                 double currentNumber;
@@ -374,11 +362,11 @@ namespace GT_ModernCalculator
             {
                 double currentNumber;
 
-                if (double.TryParse(TxtOut1S.Text, out currentNumber))
+                if (double.TryParse(TxtOut0S.Text, out currentNumber))
                 {
                     double result = Math.Exp(currentNumber);
                     TxtOut0S.Text = result.ToString();
-                    TxtOut1S.Text = $"TanH ({currentNumber})";
+                    TxtOut1S.Text = $"Exp({currentNumber})";
                 }
                 else
                 {
@@ -406,67 +394,87 @@ namespace GT_ModernCalculator
             isOperationPerformed = true;
         }
         // Science calculator button operation
-        private void BtnExp_Click(object sender, EventArgs e)
+        private void BtnExp_Click(Object sender, EventArgs e)
         {
             operation = "Exp";
             OperationButton_Click(sender, e);
         }
-        private void PiButton_Click(object sender, EventArgs e)
+        private void PiButton_Click(Object sender, EventArgs e)
         {
-            operation = "π";
-            OperationButton_Click(sender, e);
+            double PIF = Math.PI;
+            double currentNumber;
+
+            if (double.TryParse(TxtOut0S.Text, out currentNumber))
+            {
+                if (currentNumber == 0)
+                {
+                    TxtOut0S.Text = PIF.ToString();
+                    TxtOut1S.Text = "π";
+                }
+                else
+                {
+                    double result = currentNumber * PIF;
+                    TxtOut0S.Text = result.ToString();
+                    TxtOut1S.Text = $"π({currentNumber})";
+                }
+            }
+            else
+            {
+                TxtOut0S.Text = PIF.ToString();
+                TxtOut1S.Text = "π";
+            }
         }
         private void InxButton_Click(Object sender, EventArgs e)
         {
             operation = "In x";
             OperationButton_Click(sender, e);
         }
-        private void BtnBin_Click(object sender, EventArgs e)
+        private void BtnBin_Click(Object sender, EventArgs e)
         {
             operation = "Bin";
             OperationButton_Click(sender, e);
         }
-        private void BtnMod_Click(object sender, EventArgs e)
+        private void BtnMod_Click(Object sender, EventArgs e)
         {
             operation = "Mod";
             OperationButton_Click(sender, e);
         }
-        private void BtnHex_Click(object sender, EventArgs e)
+        private void BtnHex_Click(Object sender, EventArgs e)
         {
             operation = "Hex";
             OperationButton_Click(sender, e);
         }
-        private void BtnOct_Click(object sender, EventArgs e)
+        private void BtnOct_Click(Object sender, EventArgs e)
         {
             operation = "Oct";
             OperationButton_Click(sender, e);
         }
-        private void BtnSin_Click(object sender, EventArgs e)
+        private void BtnSin_Click(Object sender, EventArgs e)
         {
             operation = "Sin";
             OperationButton_Click(sender, e);
         }
-        private void BtnCos_Click(object sender, EventArgs e)
+        private void BtnCos_Click(Object sender, EventArgs e)
         {
             operation = "Cos";
             OperationButton_Click(sender, e);
         }
-        private void BtnTan_Click(object sender, EventArgs e)
+        private void BtnTan_Click(Object sender, EventArgs e)
         {
             operation = "Tan";
             OperationButton_Click(sender, e);
         }
-        private void BtnCosec_Click(object sender, EventArgs e)
+        private void BtnCosec_Click(Object sender, EventArgs e)
         {
             operation = "cosec";
             OperationButton_Click(sender, e);
         }
-        private void BtnInx_Click(object sender, EventArgs e)
+        private void BtnInx_Click(Object sender, EventArgs e)
         {
             operation = "In x";
             OperationButton_Click(sender, e);
         }
-        private void BtnSinH_Click(object sender, EventArgs e)
+        private void BtnSinH_Click(Object sender, EventArgs e)
         {
             operation = "SinH";
             OperationButton_Click(sender, e);
@@ -695,6 +703,8 @@ namespace GT_ModernCalculator
                     return "×"; // Multiplication symbol
                 case "/":
                     return "÷"; // Division symbol
+                case "pi":
+                    return "π";
                 default:
                     return operation;
             }

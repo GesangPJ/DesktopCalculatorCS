@@ -137,14 +137,6 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="BtnPi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAHtJREFUWEftkDEOgDAMA/sOngQP6s674FPdmIJFzMLUEIRA8kkZasWO1SKE+DT2
-        EIyLQ38axt2HOd1BXM8fPmGeCqiACqiACvyqQHOHDZRyMCxSYHWHVUo5GBYpMLnDNkzF5H7iiAJ8doH1
-        2V0O5XfB3RGzYBolIcSFUnbR+bDz6VxyIwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="BtnSPlusMinus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -234,6 +226,14 @@
         g1Tfvc3iX80EKMpqs8QWi6zqv/E7tvKgILvNEtdBRttNB5kl2/LvI9X/QJUHmTOQXLvNkqczo9AN9dSS
         rsW60/Kg4G2qy2+z5Okwq0mcbkZ68nWUdZgtoeAAvUZlm82FmlGkNSHlv/Y+/yGt1l8U5b9DmGazfwAA
         AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnPie.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAHtJREFUWEftkDEOgDAMA/sOngQP6s674FPdmIJFzMLUEIRA8kkZasWO1SKE+DT2
+        EIyLQ38axt2HOd1BXM8fPmGeCqiACqiACvyqQHOHDZRyMCxSYHWHVUo5GBYpMLnDNkzF5H7iiAJ8doH1
+        2V0O5XfB3RGzYBolIcSFUnbR+bDz6VxyIwAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

@@ -35,7 +35,6 @@
             BtnSClearEntry = new Button();
             BtnSClear = new Button();
             BtnSRemove = new Button();
-            BtnPi = new Button();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -72,6 +71,7 @@
             BtnTanH = new Button();
             BtnInX = new Button();
             LabelVersion = new Label();
+            BtnPie = new Button();
             SuspendLayout();
             // 
             // TxtOut0S
@@ -162,23 +162,6 @@
             BtnSRemove.UseVisualStyleBackColor = false;
             BtnSRemove.Click += BtnRemove_Click;
             // 
-            // BtnPi
-            // 
-            BtnPi.BackColor = Color.FromArgb(64, 64, 64);
-            BtnPi.FlatAppearance.BorderSize = 0;
-            BtnPi.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnPi.FlatStyle = FlatStyle.Flat;
-            BtnPi.Font = new Font("Ubuntu", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnPi.ForeColor = Color.White;
-            BtnPi.Image = (Image)resources.GetObject("BtnPi.Image");
-            BtnPi.Location = new Point(150, 153);
-            BtnPi.Margin = new Padding(0);
-            BtnPi.Name = "BtnPi";
-            BtnPi.Size = new Size(118, 59);
-            BtnPi.TabIndex = 21;
-            BtnPi.UseVisualStyleBackColor = false;
-            BtnPi.Click += PiButton_Click;
-            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(64, 64, 64);
@@ -211,6 +194,7 @@
             button2.TabIndex = 23;
             button2.Text = "Hex";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += BtnHex_Click;
             // 
             // button3
             // 
@@ -227,6 +211,7 @@
             button3.TabIndex = 24;
             button3.Text = "Exp";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += BtnExp_Click;
             // 
             // button4
             // 
@@ -243,6 +228,7 @@
             button4.TabIndex = 25;
             button4.Text = "Bin";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += BtnBin_Click;
             // 
             // button5
             // 
@@ -259,6 +245,7 @@
             button5.TabIndex = 26;
             button5.Text = "Oct";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += BtnOct_Click;
             // 
             // BtnSPlusMinus
             // 
@@ -494,6 +481,7 @@
             BtnSEqual.Size = new Size(354, 59);
             BtnSEqual.TabIndex = 47;
             BtnSEqual.UseVisualStyleBackColor = false;
+            BtnSEqual.Click += EqualButton_Click;
             // 
             // BtnSPlus
             // 
@@ -578,6 +566,7 @@
             BtnSOneperX.TabIndex = 51;
             BtnSOneperX.Text = "1/x";
             BtnSOneperX.UseVisualStyleBackColor = false;
+            BtnSOneperX.Click += OneOverXButton_Click;
             // 
             // BtnSSquare
             // 
@@ -592,6 +581,7 @@
             BtnSSquare.Size = new Size(118, 59);
             BtnSSquare.TabIndex = 50;
             BtnSSquare.UseVisualStyleBackColor = false;
+            BtnSSquare.Click += SquareButton_Click;
             // 
             // BtnSSqrt
             // 
@@ -606,6 +596,7 @@
             BtnSSqrt.Size = new Size(118, 59);
             BtnSSqrt.TabIndex = 49;
             BtnSSqrt.UseVisualStyleBackColor = false;
+            BtnSSqrt.Click += SquareRootButton_Click;
             // 
             // BtnSPercent
             // 
@@ -620,6 +611,7 @@
             BtnSPercent.Size = new Size(118, 59);
             BtnSPercent.TabIndex = 48;
             BtnSPercent.UseVisualStyleBackColor = false;
+            BtnSPercent.Click += PercentageButton_Click;
             // 
             // BtnSin
             // 
@@ -636,6 +628,7 @@
             BtnSin.TabIndex = 52;
             BtnSin.Text = "Sin";
             BtnSin.UseVisualStyleBackColor = false;
+            BtnSin.Click += BtnSin_Click;
             // 
             // BtnCos
             // 
@@ -652,6 +645,7 @@
             BtnCos.TabIndex = 53;
             BtnCos.Text = "Cos";
             BtnCos.UseVisualStyleBackColor = false;
+            BtnCos.Click += BtnCos_Click;
             // 
             // BtnTan
             // 
@@ -668,6 +662,7 @@
             BtnTan.TabIndex = 54;
             BtnTan.Text = "Tan";
             BtnTan.UseVisualStyleBackColor = false;
+            BtnTan.Click += BtnTan_Click;
             // 
             // BtnCosec
             // 
@@ -684,6 +679,7 @@
             BtnCosec.TabIndex = 55;
             BtnCosec.Text = "Cosec";
             BtnCosec.UseVisualStyleBackColor = false;
+            BtnCosec.Click += BtnCosec_Click;
             // 
             // BtnSinH
             // 
@@ -700,6 +696,7 @@
             BtnSinH.TabIndex = 56;
             BtnSinH.Text = "SinH";
             BtnSinH.UseVisualStyleBackColor = false;
+            BtnSinH.Click += BtnSinH_Click;
             // 
             // BtnCosH
             // 
@@ -716,6 +713,7 @@
             BtnCosH.TabIndex = 57;
             BtnCosH.Text = "CosH";
             BtnCosH.UseVisualStyleBackColor = false;
+            BtnCosH.Click += BtnCosH_Click;
             // 
             // BtnTanH
             // 
@@ -732,6 +730,7 @@
             BtnTanH.TabIndex = 58;
             BtnTanH.Text = "TanH";
             BtnTanH.UseVisualStyleBackColor = false;
+            BtnTanH.Click += BtnTanH_Click;
             // 
             // BtnInX
             // 
@@ -748,6 +747,7 @@
             BtnInX.TabIndex = 59;
             BtnInX.Text = "In x";
             BtnInX.UseVisualStyleBackColor = false;
+            BtnInX.Click += InxButton_Click;
             // 
             // LabelVersion
             // 
@@ -761,12 +761,28 @@
             LabelVersion.TabIndex = 60;
             LabelVersion.Text = "0";
             // 
+            // BtnPie
+            // 
+            BtnPie.BackColor = Color.FromArgb(64, 64, 64);
+            BtnPie.FlatAppearance.BorderSize = 0;
+            BtnPie.FlatAppearance.MouseOverBackColor = Color.Silver;
+            BtnPie.FlatStyle = FlatStyle.Flat;
+            BtnPie.Image = (Image)resources.GetObject("BtnPie.Image");
+            BtnPie.Location = new Point(150, 153);
+            BtnPie.Margin = new Padding(0);
+            BtnPie.Name = "BtnPie";
+            BtnPie.Size = new Size(118, 59);
+            BtnPie.TabIndex = 62;
+            BtnPie.UseVisualStyleBackColor = false;
+            BtnPie.Click += PiButton_Click;
+            // 
             // ScienceCalculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(800, 614);
+            Controls.Add(BtnPie);
             Controls.Add(LabelVersion);
             Controls.Add(BtnInX);
             Controls.Add(BtnTanH);
@@ -803,7 +819,6 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(BtnPi);
             Controls.Add(BtnSClearEntry);
             Controls.Add(BtnSClear);
             Controls.Add(BtnSRemove);
@@ -824,7 +839,6 @@
         private Button BtnSClearEntry;
         private Button BtnSClear;
         private Button BtnSRemove;
-        private Button BtnPi;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -861,5 +875,6 @@
         private Button BtnTanH;
         private Button BtnInX;
         private Label LabelVersion;
+        private Button BtnPie;
     }
 }
