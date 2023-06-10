@@ -1,7 +1,12 @@
-﻿namespace GT_ModernCalculator
+﻿using System.Windows.Forms;
+
+namespace GT_ModernCalculator
 {
     public partial class StandardCalculator : Form
     {
+        private int targetWidth;
+        private int currentWidth;
+        private System.Windows.Forms.Timer animationTimer;
         private double currentResult = 0.0;
         private double previousNumber = 0.0;
         private string operation = "";
@@ -14,6 +19,9 @@
             InitializeComponent();
             //Display App Product Version
             LabelVersionStandard.Text = "V." + ProductVersion + "-Release";
+            animationTimer = new System.Windows.Forms.Timer();
+            animationTimer.Interval = 10; // Adjust this value to control the animation speed
+            animationTimer.Tick += AnimationTimer_Tick;
         }
         private void NumberButton_Click(object sender, EventArgs e)
         {
@@ -366,12 +374,17 @@
         private void BtnMenu_Click(object sender, EventArgs e)
         {
             if (panelSidebar.Visible)
-                panelSidebar.Visible = false;
+            {
+                // Close the sidebar
+                StartSidebarAnimation(false);
+            }
             else
             {
+                // Open the sidebar
                 panelSidebar.Visible = true;
                 SubscribeButtonClickEvents();
                 SubscribeFormClickEvent();
+                StartSidebarAnimation(true);
             }
         }
         private void SubscribeButtonClickEvents()
@@ -400,6 +413,37 @@
             }
             this.Click -= CloseSidebarOnClick;
         }
+        // Sidebar Animation
+        private void StartSidebarAnimation(bool open)
+        {
+            int targetWidth = open ? 200 : 0; // Adjust the target width based on open or close
+            animationTimer.Tag = open;
+            animationTimer.Start();
+        }
+        private void AnimationTimer_Tick(object? sender, EventArgs e)
+        {
+            bool open = (bool)animationTimer.Tag;
+
+            if (open && panelSidebar.Width < targetWidth)
+            {
+                panelSidebar.Width += 10; // Adjust the increment value for a smooth animation
+            }
+            else if (!open && panelSidebar.Width > targetWidth)
+            {
+                panelSidebar.Width -= 10; // Adjust the increment value for a smooth animation
+            }
+            else
+            {
+                animationTimer.Stop(); // Stop the timer when the animation is complete
+
+                if (!open)
+                {
+                    panelSidebar.Visible = false; // Hide the sidebar after closing animation
+                    UnsubscribeEvents();
+                }
+            }
+        }
+        
 
 
 
