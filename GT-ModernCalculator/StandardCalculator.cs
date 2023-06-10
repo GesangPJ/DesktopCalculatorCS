@@ -420,7 +420,7 @@ namespace GT_ModernCalculator
             animationTimer.Tag = open;
             animationTimer.Start();
         }
-        private void AnimationTimer_Tick(object? sender, EventArgs e)
+        private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             bool open = (bool)animationTimer.Tag;
 
@@ -435,15 +435,15 @@ namespace GT_ModernCalculator
             else
             {
                 animationTimer.Stop(); // Stop the timer when the animation is complete
+                UnsubscribeEvents(); // Unsubscribe the events
 
                 if (!open)
                 {
                     panelSidebar.Visible = false; // Hide the sidebar after closing animation
-                    UnsubscribeEvents();
                 }
             }
         }
-        
+
 
 
 
