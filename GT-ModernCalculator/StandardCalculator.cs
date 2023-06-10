@@ -4,6 +4,7 @@ namespace GT_ModernCalculator
 {
     public partial class StandardCalculator : Form
     {
+        private bool isAnimating = false;
         private int targetWidth;
         private int currentWidth;
         private System.Windows.Forms.Timer animationTimer;
@@ -373,18 +374,21 @@ namespace GT_ModernCalculator
         //Sidebar Panel function
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-            if (panelSidebar.Visible)
+            if (!isAnimating)
             {
-                // Close the sidebar
-                StartSidebarAnimation(false);
-            }
-            else
-            {
-                // Open the sidebar
-                panelSidebar.Visible = true;
-                SubscribeButtonClickEvents();
-                SubscribeFormClickEvent();
-                StartSidebarAnimation(true);
+                if (panelSidebar.Visible)
+                {
+                    // Close the sidebar
+                    StartSidebarAnimation(false);
+                }
+                else
+                {
+                    // Open the sidebar
+                    panelSidebar.Visible = true;
+                    SubscribeButtonClickEvents();
+                    SubscribeFormClickEvent();
+                    StartSidebarAnimation(true);
+                }
             }
         }
         private void SubscribeButtonClickEvents()
@@ -416,21 +420,23 @@ namespace GT_ModernCalculator
         // Sidebar Animation
         private void StartSidebarAnimation(bool open)
         {
-            int targetWidth = open ? 200 : 0; // Adjust the target width based on open or close
+            targetWidth = open ? 60 : 0; // Adjust the target width based on open or close
             animationTimer.Tag = open;
             animationTimer.Start();
+            isAnimating = true; // Set the flag to true when the animation starts
         }
+
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             bool open = (bool)animationTimer.Tag;
 
             if (open && panelSidebar.Width < targetWidth)
             {
-                panelSidebar.Width += 10; // Adjust the increment value for a smooth animation
+                panelSidebar.Width += 5; // Adjust the increment value for a smooth animation
             }
             else if (!open && panelSidebar.Width > targetWidth)
             {
-                panelSidebar.Width -= 10; // Adjust the increment value for a smooth animation
+                panelSidebar.Width -= 5; // Adjust the increment value for a smooth animation
             }
             else
             {
@@ -441,8 +447,11 @@ namespace GT_ModernCalculator
                 {
                     panelSidebar.Visible = false; // Hide the sidebar after closing animation
                 }
+
+                isAnimating = false; // Reset the flag when the animation is complete
             }
         }
+
 
 
 
