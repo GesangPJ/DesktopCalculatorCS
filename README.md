@@ -16,6 +16,13 @@ A Desktop calculator app built using Visual Studio 2022
 - ~~Temperature Converter~~
 
 ## Changelog
+### V.3.0.8 
+*Update patch*
+
+- Fix sidebar button not working to switch to another form
+- Fix form function glitch
+- Fix exit glitch
+
 ### V.3.0.7-Release
 *Major update V.3*
 - Working Temperature Converter
