@@ -8,12 +8,20 @@ A Desktop calculator app built using Visual Studio 2022
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sidebar.jpg" width="400" height="350">
 
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/tempertureconverter.jpg" width = "250" height = "320" >
+
 ## Features Planning
 - ~~Standard calculator function~~
 - ~~Scientific calculator function~~
-- Temperature Converter
+- ~~Temperature Converter~~
 
 ## Changelog
+### V.3.0.7-Release
+*Major update V.3*
+Working Temperature Converter
+- Celcius
+- Farenheit
+- Kelvin
 
 ### V.2.1.7-Release
 *Major update V.2*
