@@ -812,6 +812,7 @@
             BtnFormTemp.TabIndex = 2;
             toolTip4.SetToolTip(BtnFormTemp, "Temperature Converter");
             BtnFormTemp.UseVisualStyleBackColor = true;
+            BtnFormTemp.Click += BtnTemperature_Click;
             // 
             // BtnFormScience
             // 
