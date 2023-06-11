@@ -14,15 +14,17 @@ namespace GT_ModernCalculator
 {
     public partial class ScienceCalculator : Form
     {
-        //Initializing
+        //Calculation Initializing
         private double currentResult = 0.0;
         private double previousNumber = 0.0;
         private string operation = "";
         private bool isOperationPerformed = false;
         private bool isModSelected = false;
+        //Sidebar animation
         private bool isAnimating = false;
         private int targetWidth;
         private System.Windows.Forms.Timer animationTimer;
+        //Form handle
         private bool switchingToAnotherForm = false;
         private bool isClosing = false;
 
@@ -54,6 +56,17 @@ namespace GT_ModernCalculator
             // Close the current form
             this.Close();
 
+        }
+        private void BtnTemperature_Click(object sender, EventArgs e)
+        {
+            switchingToAnotherForm = true;
+            TemperatureConverter temperatureConverter = new TemperatureConverter();
+
+            this.Hide();
+
+            temperatureConverter.ShowDialog();
+
+            this.Close();
         }
 
         //When number button clicked

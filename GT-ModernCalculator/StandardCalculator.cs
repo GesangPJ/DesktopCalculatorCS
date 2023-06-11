@@ -47,6 +47,16 @@ namespace GT_ModernCalculator
             // Close the current form
             this.Close();
         }
+        private void BtnTemperature_Click(object sender, EventArgs e)
+        {
+            TemperatureConverter temperatureConverter = new TemperatureConverter();
+
+            this.Hide();
+
+            temperatureConverter.ShowDialog();
+
+            this.Close();
+        }
 
         // Calculation function
         private void NumberButton_Click(object sender, EventArgs e)

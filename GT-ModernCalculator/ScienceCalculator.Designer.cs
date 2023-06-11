@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScienceCalculator));
             TxtOut0S = new TextBox();
             TxtOut1S = new TextBox();
@@ -76,6 +77,10 @@
             BtnFormTemp = new Button();
             BtnFormScience = new Button();
             BtnFormCalculator = new Button();
+            toolTip1 = new ToolTip(components);
+            toolTip2 = new ToolTip(components);
+            toolTip3 = new ToolTip(components);
+            toolTip4 = new ToolTip(components);
             panelSidebarS.SuspendLayout();
             SuspendLayout();
             // 
@@ -116,6 +121,7 @@
             BtnSMenu.Name = "BtnSMenu";
             BtnSMenu.Size = new Size(63, 50);
             BtnSMenu.TabIndex = 5;
+            toolTip1.SetToolTip(BtnSMenu, "Menu");
             BtnSMenu.UseVisualStyleBackColor = false;
             BtnSMenu.Click += BtnSMenu_Click;
             // 
@@ -804,6 +810,7 @@
             BtnFormTemp.Name = "BtnFormTemp";
             BtnFormTemp.Size = new Size(60, 70);
             BtnFormTemp.TabIndex = 2;
+            toolTip4.SetToolTip(BtnFormTemp, "Temperature Converter");
             BtnFormTemp.UseVisualStyleBackColor = true;
             // 
             // BtnFormScience
@@ -816,6 +823,7 @@
             BtnFormScience.Name = "BtnFormScience";
             BtnFormScience.Size = new Size(60, 70);
             BtnFormScience.TabIndex = 1;
+            toolTip3.SetToolTip(BtnFormScience, "Sceintific Calculator");
             BtnFormScience.UseVisualStyleBackColor = true;
             // 
             // BtnFormCalculator
@@ -828,6 +836,7 @@
             BtnFormCalculator.Name = "BtnFormCalculator";
             BtnFormCalculator.Size = new Size(60, 70);
             BtnFormCalculator.TabIndex = 0;
+            toolTip2.SetToolTip(BtnFormCalculator, "Standard Calculator");
             BtnFormCalculator.UseVisualStyleBackColor = true;
             BtnFormCalculator.Click += BtnStandard_Click;
             // 
@@ -938,5 +947,9 @@
         private Button BtnFormTemp;
         private Button BtnFormScience;
         private Button BtnFormCalculator;
+        private ToolTip toolTip1;
+        private ToolTip toolTip4;
+        private ToolTip toolTip3;
+        private ToolTip toolTip2;
     }
 }
