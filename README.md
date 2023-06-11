@@ -18,10 +18,10 @@ A Desktop calculator app built using Visual Studio 2022
 ## Changelog
 ### V.3.0.7-Release
 *Major update V.3*
--Working Temperature Converter
- - Celcius
- - Farenheit
- - Kelvin
+- Working Temperature Converter
+  - Celcius
+  - Farenheit
+  - Kelvin
 - Fix StackOverflowException
 
 ### V.2.1.7-Release
