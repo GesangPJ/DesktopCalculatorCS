@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimerForm));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -37,6 +38,7 @@
             label4 = new Label();
             label5 = new Label();
             BtnStart = new Button();
+            BtnMenu = new Button();
             SuspendLayout();
             // 
             // label1
@@ -147,12 +149,26 @@
             BtnStart.Text = "START";
             BtnStart.UseVisualStyleBackColor = false;
             // 
+            // BtnMenu
+            // 
+            BtnMenu.BackColor = Color.FromArgb(32, 32, 32);
+            BtnMenu.FlatAppearance.BorderSize = 0;
+            BtnMenu.FlatStyle = FlatStyle.Flat;
+            BtnMenu.Image = (Image)resources.GetObject("BtnMenu.Image");
+            BtnMenu.Location = new Point(9, 9);
+            BtnMenu.Margin = new Padding(0);
+            BtnMenu.Name = "BtnMenu";
+            BtnMenu.Size = new Size(63, 50);
+            BtnMenu.TabIndex = 9;
+            BtnMenu.UseVisualStyleBackColor = false;
+            // 
             // TimerForm
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(810, 474);
+            Controls.Add(BtnMenu);
             Controls.Add(BtnStart);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -182,5 +198,6 @@
         private Label label4;
         private Label label5;
         private Button BtnStart;
+        private Button BtnMenu;
     }
 }
