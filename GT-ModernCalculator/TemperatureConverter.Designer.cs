@@ -74,7 +74,7 @@
             BtnTMenu.TabIndex = 6;
             toolTip1.SetToolTip(BtnTMenu, "Menu");
             BtnTMenu.UseVisualStyleBackColor = false;
-            BtnTMenu.Click += BtnTMenu_Click;
+            BtnTMenu.Click += BtnMainMenu_Click;
             // 
             // label2
             // 

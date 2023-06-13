@@ -124,7 +124,7 @@
             BtnSMenu.TabIndex = 5;
             toolTip1.SetToolTip(BtnSMenu, "Menu");
             BtnSMenu.UseVisualStyleBackColor = false;
-            BtnSMenu.Click += BtnSMenu_Click;
+            BtnSMenu.Click += BtnMainMenu_Click;
             // 
             // BtnSClearEntry
             // 

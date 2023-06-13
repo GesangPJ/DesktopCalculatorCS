@@ -84,7 +84,7 @@
             BtnMenu.TabIndex = 1;
             toolTip1.SetToolTip(BtnMenu, "Menu");
             BtnMenu.UseVisualStyleBackColor = false;
-            BtnMenu.Click += BtnMenu_Click;
+            BtnMenu.Click += BtnMainMenu_Click;
             // 
             // BtnRemove
             // 
