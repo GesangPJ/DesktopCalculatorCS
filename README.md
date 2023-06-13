@@ -16,6 +16,18 @@ A Desktop calculator app built using Visual Studio 2022
 - ~~Temperature Converter~~
 
 ## Changelog
+### V.4.0.0-Release
+*Major Update V.4 Length Converter*
+
+- Add Length Converter Function :
+   - Millimeter
+   - Centimeter
+   - Inch
+   - Meter
+   - Foot
+   - Kilometer
+   - Mile
+     
 ### V.3.0.8 
 *Update patch*
 
