@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LengthConverter));
             label1 = new Label();
             label2 = new Label();
@@ -50,6 +51,11 @@
             BtnFormTempL = new Button();
             BtnFormScienceL = new Button();
             BtnFormCalculatorL = new Button();
+            toolTip1 = new ToolTip(components);
+            toolTip2 = new ToolTip(components);
+            toolTip3 = new ToolTip(components);
+            toolTip4 = new ToolTip(components);
+            toolTip5 = new ToolTip(components);
             panelSidebarL.SuspendLayout();
             SuspendLayout();
             // 
@@ -225,6 +231,7 @@
             BtnMenuL.Name = "BtnMenuL";
             BtnMenuL.Size = new Size(63, 50);
             BtnMenuL.TabIndex = 14;
+            toolTip1.SetToolTip(BtnMenuL, "Menu");
             BtnMenuL.UseVisualStyleBackColor = false;
             // 
             // LabelVersionL
@@ -263,6 +270,7 @@
             BtnLengthL.Name = "BtnLengthL";
             BtnLengthL.Size = new Size(69, 70);
             BtnLengthL.TabIndex = 3;
+            toolTip5.SetToolTip(BtnLengthL, "Length Converter");
             BtnLengthL.UseVisualStyleBackColor = true;
             // 
             // BtnFormTempL
@@ -275,7 +283,9 @@
             BtnFormTempL.Name = "BtnFormTempL";
             BtnFormTempL.Size = new Size(69, 70);
             BtnFormTempL.TabIndex = 2;
+            toolTip4.SetToolTip(BtnFormTempL, "Temperature Converter");
             BtnFormTempL.UseVisualStyleBackColor = true;
+            BtnFormTempL.Click += BtnTemperature_Click;
             // 
             // BtnFormScienceL
             // 
@@ -287,7 +297,9 @@
             BtnFormScienceL.Name = "BtnFormScienceL";
             BtnFormScienceL.Size = new Size(69, 70);
             BtnFormScienceL.TabIndex = 1;
+            toolTip3.SetToolTip(BtnFormScienceL, "Scientific Calculator");
             BtnFormScienceL.UseVisualStyleBackColor = true;
+            BtnFormScienceL.Click += BtnScience_Click;
             // 
             // BtnFormCalculatorL
             // 
@@ -299,7 +311,9 @@
             BtnFormCalculatorL.Name = "BtnFormCalculatorL";
             BtnFormCalculatorL.Size = new Size(69, 70);
             BtnFormCalculatorL.TabIndex = 0;
+            toolTip2.SetToolTip(BtnFormCalculatorL, "Standard Calculator");
             BtnFormCalculatorL.UseVisualStyleBackColor = true;
+            BtnFormCalculatorL.Click += BtnStandard_Click;
             // 
             // LengthConverter
             // 
@@ -356,5 +370,10 @@
         private Button BtnFormTempL;
         private Button BtnFormScienceL;
         private Button BtnFormCalculatorL;
+        private ToolTip toolTip1;
+        private ToolTip toolTip5;
+        private ToolTip toolTip4;
+        private ToolTip toolTip3;
+        private ToolTip toolTip2;
     }
 }
