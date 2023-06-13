@@ -4,7 +4,7 @@ A Desktop calculator app built using Visual Studio 2022
 
 ## Features
 
-### Standard Calculator 🧮
+### 1. Standard Calculator 🧮
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/calculatorapp.jpg" width = "250" height = "320" >
 
 Standard Calculator with standard arithmetic operation and additional function :
@@ -15,7 +15,7 @@ Standard Calculator with standard arithmetic operation and additional function :
 
 ----------------------------------------------------------------
 
-### Main Menu
+### 2. Main Menu
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/MainMenuSS.jpg" width ="370" height = "270">
 
@@ -23,7 +23,7 @@ Main Menu form for accessing all features.
 
 
 ----------------------------------------------------------------
-### Limited Scientific Calculator  🧪
+### 3. Limited Scientific Calculator  🧪
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sciencecalculator.jpg" width="400" height="350">
 
@@ -43,7 +43,7 @@ Limited Scientific Calculator function :
   - In x
   - Cosec
 ----------------------------------------------------------------
-### Temperature Converter  🌡
+### 4. Temperature Converter  🌡
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/tempertureconverter.jpg" width = "270" height = "320" >
 
@@ -52,7 +52,7 @@ Temperature Converter function to convert between :
  - Farenheit
  - Kelvin
 ----------------------------------------------------------------
-### Length Converter  📏
+### 5. Length Converter  📏
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/lengthconverter.jpg" width = "270" height = "320" >
 
@@ -67,7 +67,7 @@ Length Converter function to convert between :
 
 ----------------------------------------------------------------
 
-### Timer ⏲
+### 6. Timer ⏲
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/TimerSS.jpg" width ="370" height = "270" >
 
