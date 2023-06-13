@@ -88,6 +88,18 @@ namespace GT_ModernCalculator
             }
         }
 
+        private void ClearConversionResult()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox targetTextBox && targetTextBox.Name.StartsWith("Txt"))
+                {
+                    targetTextBox.Text = "0";
+                }
+            }
+        }
+
+
         private double ConvertLength(double value, string fromUnit, string toUnit)
         {
             double result = 0;
@@ -146,17 +158,6 @@ namespace GT_ModernCalculator
             }
 
             return result;
-        }
-
-        private void ClearConversionResult()
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is TextBox targetTextBox && targetTextBox.Name.StartsWith("Txt"))
-                {
-                    targetTextBox.Text = "";
-                }
-            }
         }
 
         // Form Switching
