@@ -33,6 +33,18 @@ namespace GT_ModernCalculator
         }
         //Switch between forms
 
+        private void LengthConverter_Click(object sender, EventArgs e)
+        {
+            // LengthConverter Form
+            LengthConverter lengthConverterForm = new LengthConverter();
+
+            this.Hide();
+
+            lengthConverterForm.ShowDialog();
+
+            this.Close();
+        }
+
         private void BtnScience_Click(object sender, EventArgs e)
         {
             // Create a new instance of the ScienceCalculator form

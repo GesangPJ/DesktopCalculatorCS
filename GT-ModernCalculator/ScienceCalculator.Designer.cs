@@ -74,6 +74,7 @@
             LabelVersion = new Label();
             BtnPie = new Button();
             panelSidebarS = new Panel();
+            BtnLengthS = new Button();
             BtnFormTemp = new Button();
             BtnFormScience = new Button();
             BtnFormCalculator = new Button();
@@ -791,6 +792,7 @@
             // panelSidebarS
             // 
             panelSidebarS.BackColor = Color.FromArgb(24, 24, 24);
+            panelSidebarS.Controls.Add(BtnLengthS);
             panelSidebarS.Controls.Add(BtnFormTemp);
             panelSidebarS.Controls.Add(BtnFormScience);
             panelSidebarS.Controls.Add(BtnFormCalculator);
@@ -799,6 +801,19 @@
             panelSidebarS.Size = new Size(63, 450);
             panelSidebarS.TabIndex = 63;
             panelSidebarS.Visible = false;
+            // 
+            // BtnLengthS
+            // 
+            BtnLengthS.FlatAppearance.BorderSize = 0;
+            BtnLengthS.FlatAppearance.MouseOverBackColor = Color.Silver;
+            BtnLengthS.FlatStyle = FlatStyle.Flat;
+            BtnLengthS.Image = (Image)resources.GetObject("BtnLengthS.Image");
+            BtnLengthS.Location = new Point(3, 243);
+            BtnLengthS.Name = "BtnLengthS";
+            BtnLengthS.Size = new Size(60, 70);
+            BtnLengthS.TabIndex = 64;
+            BtnLengthS.UseVisualStyleBackColor = true;
+            BtnLengthS.Click += LengthConverter_Click;
             // 
             // BtnFormTemp
             // 
@@ -952,5 +967,6 @@
         private ToolTip toolTip4;
         private ToolTip toolTip3;
         private ToolTip toolTip2;
+        private Button BtnLengthS;
     }
 }
