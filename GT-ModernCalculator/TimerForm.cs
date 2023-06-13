@@ -15,6 +15,9 @@ namespace GT_ModernCalculator
         public TimerForm()
         {
             InitializeComponent();
+            //Show product version
+
+            VersionLabelTM.Text = "V." + ProductVersion;
         }
         private void btnStartTimer_Click(object sender, EventArgs e)
         {

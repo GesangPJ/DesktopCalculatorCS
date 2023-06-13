@@ -39,6 +39,7 @@
             label5 = new Label();
             BtnStart = new Button();
             BtnMenuTM = new Button();
+            VersionLabelTM = new Label();
             SuspendLayout();
             // 
             // label1
@@ -148,6 +149,7 @@
             BtnStart.TabIndex = 8;
             BtnStart.Text = "START";
             BtnStart.UseVisualStyleBackColor = false;
+            BtnStart.Click += btnStartTimer_Click;
             // 
             // BtnMenuTM
             // 
@@ -162,12 +164,24 @@
             BtnMenuTM.TabIndex = 9;
             BtnMenuTM.UseVisualStyleBackColor = false;
             // 
+            // VersionLabelTM
+            // 
+            VersionLabelTM.AutoSize = true;
+            VersionLabelTM.Font = new Font("Ubuntu Light", 8.999999F, FontStyle.Regular, GraphicsUnit.Point);
+            VersionLabelTM.ForeColor = Color.White;
+            VersionLabelTM.Location = new Point(95, 367);
+            VersionLabelTM.Name = "VersionLabelTM";
+            VersionLabelTM.Size = new Size(18, 21);
+            VersionLabelTM.TabIndex = 10;
+            VersionLabelTM.Text = "0";
+            // 
             // TimerForm
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
-            ClientSize = new Size(810, 474);
+            ClientSize = new Size(810, 397);
+            Controls.Add(VersionLabelTM);
             Controls.Add(BtnMenuTM);
             Controls.Add(BtnStart);
             Controls.Add(label5);
@@ -199,5 +213,6 @@
         private Label label5;
         private Button BtnStart;
         private Button BtnMenuTM;
+        private Label VersionLabelTM;
     }
 }

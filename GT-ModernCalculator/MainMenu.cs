@@ -19,6 +19,9 @@ namespace GT_ModernCalculator
         public MainMenu()
         {
             InitializeComponent();
+
+            //Show Product Version
+            VersionLabelM.Text = "V." + ProductVersion;
         }
         // Form Switching
 

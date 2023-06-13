@@ -37,6 +37,7 @@
             toolTip1 = new ToolTip(components);
             button1 = new Button();
             button2 = new Button();
+            VersionLabelM = new Label();
             SuspendLayout();
             // 
             // BtnLength
@@ -122,12 +123,24 @@
             toolTip1.SetToolTip(button2, "More Features Coming...");
             button2.UseVisualStyleBackColor = true;
             // 
+            // VersionLabelM
+            // 
+            VersionLabelM.AutoSize = true;
+            VersionLabelM.Font = new Font("Ubuntu Light", 8.999999F, FontStyle.Regular, GraphicsUnit.Point);
+            VersionLabelM.Location = new Point(153, 297);
+            VersionLabelM.Name = "VersionLabelM";
+            VersionLabelM.Size = new Size(18, 21);
+            VersionLabelM.TabIndex = 10;
+            VersionLabelM.Text = "0";
+            VersionLabelM.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(603, 373);
+            Controls.Add(VersionLabelM);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(BtnLength);
@@ -141,6 +154,7 @@
             Name = "MainMenu";
             Text = "Main Menu";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -152,5 +166,6 @@
         private ToolTip toolTip1;
         private Button button1;
         private Button button2;
+        private Label VersionLabelM;
     }
 }
