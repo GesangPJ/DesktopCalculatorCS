@@ -13,11 +13,27 @@ namespace GT_ModernCalculator
 {
     public partial class LengthConverter : Form
     {
+        // Sidebar animation need
+        private bool isAnimating = false;
+        private int targetWidth;
+        private int currentWidth;
+        private System.Windows.Forms.Timer animationTimer;
+
+        // Length Converter need
         private bool updatingTextProgrammatically = false;
         private bool switchingToAnotherForm = false;
+
+        
         public LengthConverter()
         {
             InitializeComponent();
+            // Show product version
+            LabelVersionL.Text = "V." + ProductVersion;
+
+            // Sidebar animation init
+            animationTimer = new System.Windows.Forms.Timer();
+            animationTimer.Interval = 10; // Adjust this value to control the animation speed
+            animationTimer.Tick += AnimationTimer_Tick;
 
         }
         // Length Converter Function
@@ -133,6 +149,86 @@ namespace GT_ModernCalculator
             // Close the current form
             this.Close();
 
+        }
+        // Sidebar function
+        private void BtnMenuL_Click(object sender, EventArgs e)
+        {
+            if (!isAnimating)
+            {
+                if (panelSidebarL.Visible)
+                {
+                    // Close the sidebar
+                    StartSidebarAnimation(false);
+                }
+                else
+                {
+                    // Open the sidebar
+                    panelSidebarL.Visible = true;
+                    SubscribeButtonClickEvents();
+                    SubscribeFormClickEvent();
+                    StartSidebarAnimation(true);
+                }
+            }
+        }
+        private void SubscribeButtonClickEvents()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != BtnMenuL)
+                    control.Click += CloseSidebarOnClick;
+            }
+        }
+        private void SubscribeFormClickEvent()
+        {
+            this.Click += CloseSidebarOnClick;
+        }
+        private void CloseSidebarOnClick(object? sender, EventArgs e)
+        {
+            panelSidebarL.Visible = false;
+            UnsubscribeEvents();
+        }
+        private void UnsubscribeEvents()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button && control != BtnMenuL)
+                    control.Click -= CloseSidebarOnClick;
+            }
+            this.Click -= CloseSidebarOnClick;
+        }
+        // Sidebar Animation
+        private void StartSidebarAnimation(bool open)
+        {
+            targetWidth = open ? 60 : 0; // Adjust the target width based on open or close
+            animationTimer.Tag = open;
+            animationTimer.Start();
+            isAnimating = true; // Set the flag to true when the animation starts
+        }
+
+        private void AnimationTimer_Tick(object? sender, EventArgs e)
+        {
+            bool open = (bool)animationTimer.Tag;
+
+            if (open && panelSidebarL.Width < targetWidth)
+            {
+                panelSidebarL.Width += 5; // Adjust the increment value for a smooth animation
+            }
+            else if (!open && panelSidebarL.Width > targetWidth)
+            {
+                panelSidebarL.Width -= 5; // Adjust the increment value for a smooth animation
+            }
+            else
+            {
+                animationTimer.Stop(); // Stop the timer when the animation is complete
+                UnsubscribeEvents(); // Unsubscribe the events
+
+                if (!open)
+                {
+                    panelSidebarL.Visible = false; // Hide the sidebar after closing animation
+                }
+
+                isAnimating = false; // Reset the flag when the animation is complete
+            }
         }
     }
 }
