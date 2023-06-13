@@ -14,11 +14,6 @@ namespace GT_ModernCalculator
 {
     public partial class LengthConverter : Form
     {
-
-        // Sidebar animation need
-
-        private System.Windows.Forms.Timer animationTimer;
-
         // Form Closing need
         private bool isClosing = false;
 
