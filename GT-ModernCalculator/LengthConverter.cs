@@ -18,7 +18,7 @@ namespace GT_ModernCalculator
         private int targetWidth;
         private int currentWidth;
         private System.Windows.Forms.Timer animationTimer;
-        
+
         // Form Switching need
         private bool switchingToAnotherForm = false;
 
@@ -158,7 +158,7 @@ namespace GT_ModernCalculator
                 }
             }
         }
-      
+
         // Form Switching
 
         private void BtnScience_Click(object sender, EventArgs e)

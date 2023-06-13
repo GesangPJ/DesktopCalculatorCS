@@ -140,6 +140,7 @@
             TxtMilimeter.TabIndex = 7;
             TxtMilimeter.Text = "0";
             TxtMilimeter.TextAlign = HorizontalAlignment.Right;
+            TxtMilimeter.TextChanged += LengthTextChanged;
             // 
             // TxtCentimeter
             // 
@@ -152,6 +153,7 @@
             TxtCentimeter.TabIndex = 8;
             TxtCentimeter.Text = "0";
             TxtCentimeter.TextAlign = HorizontalAlignment.Right;
+            TxtCentimeter.TextChanged += LengthTextChanged;
             // 
             // TxtInch
             // 
@@ -164,6 +166,7 @@
             TxtInch.TabIndex = 9;
             TxtInch.Text = "0";
             TxtInch.TextAlign = HorizontalAlignment.Right;
+            TxtInch.TextChanged += LengthTextChanged;
             // 
             // TxtMeter
             // 
@@ -176,6 +179,7 @@
             TxtMeter.TabIndex = 10;
             TxtMeter.Text = "0";
             TxtMeter.TextAlign = HorizontalAlignment.Right;
+            TxtMeter.TextChanged += LengthTextChanged;
             // 
             // TxtFoot
             // 
@@ -188,6 +192,7 @@
             TxtFoot.TabIndex = 11;
             TxtFoot.Text = "0";
             TxtFoot.TextAlign = HorizontalAlignment.Right;
+            TxtFoot.TextChanged += LengthTextChanged;
             // 
             // TxtKilometer
             // 
@@ -200,6 +205,7 @@
             TxtKilometer.TabIndex = 12;
             TxtKilometer.Text = "0";
             TxtKilometer.TextAlign = HorizontalAlignment.Right;
+            TxtKilometer.TextChanged += LengthTextChanged;
             // 
             // TxtMile
             // 
@@ -212,6 +218,7 @@
             TxtMile.TabIndex = 13;
             TxtMile.Text = "0";
             TxtMile.TextAlign = HorizontalAlignment.Right;
+            TxtMile.TextChanged += LengthTextChanged;
             // 
             // BtnMenuL
             // 
