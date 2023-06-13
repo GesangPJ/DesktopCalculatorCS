@@ -38,7 +38,7 @@
             label4 = new Label();
             label5 = new Label();
             BtnStart = new Button();
-            BtnMenu = new Button();
+            BtnMenuTM = new Button();
             SuspendLayout();
             // 
             // label1
@@ -149,18 +149,18 @@
             BtnStart.Text = "START";
             BtnStart.UseVisualStyleBackColor = false;
             // 
-            // BtnMenu
+            // BtnMenuTM
             // 
-            BtnMenu.BackColor = Color.FromArgb(32, 32, 32);
-            BtnMenu.FlatAppearance.BorderSize = 0;
-            BtnMenu.FlatStyle = FlatStyle.Flat;
-            BtnMenu.Image = (Image)resources.GetObject("BtnMenu.Image");
-            BtnMenu.Location = new Point(9, 9);
-            BtnMenu.Margin = new Padding(0);
-            BtnMenu.Name = "BtnMenu";
-            BtnMenu.Size = new Size(63, 50);
-            BtnMenu.TabIndex = 9;
-            BtnMenu.UseVisualStyleBackColor = false;
+            BtnMenuTM.BackColor = Color.FromArgb(32, 32, 32);
+            BtnMenuTM.FlatAppearance.BorderSize = 0;
+            BtnMenuTM.FlatStyle = FlatStyle.Flat;
+            BtnMenuTM.Image = (Image)resources.GetObject("BtnMenuTM.Image");
+            BtnMenuTM.Location = new Point(9, 9);
+            BtnMenuTM.Margin = new Padding(0);
+            BtnMenuTM.Name = "BtnMenuTM";
+            BtnMenuTM.Size = new Size(63, 50);
+            BtnMenuTM.TabIndex = 9;
+            BtnMenuTM.UseVisualStyleBackColor = false;
             // 
             // TimerForm
             // 
@@ -168,7 +168,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(810, 474);
-            Controls.Add(BtnMenu);
+            Controls.Add(BtnMenuTM);
             Controls.Add(BtnStart);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -180,7 +180,7 @@
             Controls.Add(label1);
             Font = new Font("Ubuntu", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "TimerForm";
             Text = "Timer Mode";
             ResumeLayout(false);
@@ -198,6 +198,6 @@
         private Label label4;
         private Label label5;
         private Button BtnStart;
-        private Button BtnMenu;
+        private Button BtnMenuTM;
     }
 }
