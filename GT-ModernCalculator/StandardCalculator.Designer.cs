@@ -59,6 +59,7 @@
             BtnPlusMinus = new Button();
             toolTip1 = new ToolTip(components);
             panelSidebarS = new Panel();
+            BtnLength = new Button();
             BtnFormTemp = new Button();
             BtnFormScience = new Button();
             BtnFormCalculator = new Button();
@@ -66,6 +67,7 @@
             toolTip3 = new ToolTip(components);
             toolTip4 = new ToolTip(components);
             LabelVersionStandard = new Label();
+            toolTip5 = new ToolTip(components);
             panelSidebarS.SuspendLayout();
             SuspendLayout();
             // 
@@ -508,6 +510,7 @@
             // panelSidebarS
             // 
             panelSidebarS.BackColor = Color.FromArgb(24, 24, 24);
+            panelSidebarS.Controls.Add(BtnLength);
             panelSidebarS.Controls.Add(BtnFormTemp);
             panelSidebarS.Controls.Add(BtnFormScience);
             panelSidebarS.Controls.Add(BtnFormCalculator);
@@ -516,6 +519,20 @@
             panelSidebarS.Size = new Size(63, 411);
             panelSidebarS.TabIndex = 30;
             panelSidebarS.Visible = false;
+            // 
+            // BtnLength
+            // 
+            BtnLength.FlatAppearance.BorderSize = 0;
+            BtnLength.FlatAppearance.MouseOverBackColor = Color.Silver;
+            BtnLength.FlatStyle = FlatStyle.Flat;
+            BtnLength.Image = (Image)resources.GetObject("BtnLength.Image");
+            BtnLength.Location = new Point(0, 243);
+            BtnLength.Name = "BtnLength";
+            BtnLength.Size = new Size(60, 70);
+            BtnLength.TabIndex = 3;
+            toolTip5.SetToolTip(BtnLength, "Length Converter");
+            BtnLength.UseVisualStyleBackColor = true;
+            BtnLength.Click += LengthConverter_Click;
             // 
             // BtnFormTemp
             // 
@@ -651,5 +668,7 @@
         private ToolTip toolTip3;
         private ToolTip toolTip2;
         private Label LabelVersionStandard;
+        private Button BtnLength;
+        private ToolTip toolTip5;
     }
 }
