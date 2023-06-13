@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace GT_ModernCalculator
 {
     public partial class LengthConverter : Form
     {
+
         // Sidebar animation need
         private bool isAnimating = false;
         private int targetWidth;
@@ -303,6 +305,9 @@ namespace GT_ModernCalculator
                     isClosing = false; // Reset the flag
                 }
             }
+        public LengthConverter()
+        {
+            InitializeComponent();
         }
     }
 }
