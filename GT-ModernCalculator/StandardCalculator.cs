@@ -4,17 +4,14 @@ namespace GT_ModernCalculator
 {
     public partial class StandardCalculator : Form
     {
-        //private ScienceCalculator scienceCalculatorForm;
-        private bool isAnimating = false;
-        private int targetWidth;
-        private int currentWidth;
-        private System.Windows.Forms.Timer animationTimer;
+        // Number initializing
         private double currentResult = 0.0;
         private double previousNumber = 0.0;
         private string operation = "";
         private bool isOperationPerformed = false;
         private bool isModSelected = false;
-        private bool switchingToAnotherForm = false;
+
+        //Form Closing need
         private bool isClosing = false;
 
 
@@ -22,50 +19,18 @@ namespace GT_ModernCalculator
         {
 
             InitializeComponent();
-            //scienceCalculatorForm = new ScienceCalculator();
             //Display App Product Version
             LabelVersionStandard.Text = "V." + ProductVersion + "-Release";
-            animationTimer = new System.Windows.Forms.Timer();
-            animationTimer.Interval = 10; // Adjust this value to control the animation speed
-            animationTimer.Tick += AnimationTimer_Tick;
-
-
         }
-        //Switch between forms
+        // Switch to Main Menu
 
-        private void LengthConverter_Click(object sender, EventArgs e)
+        private void BtnMainMenu_Click(object sender, EventArgs e)
         {
-            // LengthConverter Form
-            LengthConverter lengthConverterForm = new LengthConverter();
+            MainMenu mainMenuForm = new MainMenu();
 
             this.Hide();
 
-            lengthConverterForm.ShowDialog();
-
-            this.Close();
-        }
-
-        private void BtnScience_Click(object sender, EventArgs e)
-        {
-            // Create a new instance of the ScienceCalculator form
-            ScienceCalculator scienceCalculatorForm = new ScienceCalculator();
-
-            // Hide the current form
-            this.Hide();
-
-            // Show the ScienceCalculator form
-            scienceCalculatorForm.ShowDialog();
-
-            // Close the current form
-            this.Close();
-        }
-        private void BtnTemperature_Click(object sender, EventArgs e)
-        {
-            TemperatureConverter temperatureConverter = new TemperatureConverter();
-
-            this.Hide();
-
-            temperatureConverter.ShowDialog();
+            mainMenuForm.ShowDialog();
 
             this.Close();
         }
@@ -418,86 +383,6 @@ namespace GT_ModernCalculator
             }
         }
 
-        //Sidebar Panel function
-        private void BtnMenu_Click(object sender, EventArgs e)
-        {
-            if (!isAnimating)
-            {
-                if (panelSidebarS.Visible)
-                {
-                    // Close the sidebar
-                    StartSidebarAnimation(false);
-                }
-                else
-                {
-                    // Open the sidebar
-                    panelSidebarS.Visible = true;
-                    SubscribeButtonClickEvents();
-                    SubscribeFormClickEvent();
-                    StartSidebarAnimation(true);
-                }
-            }
-        }
-        private void SubscribeButtonClickEvents()
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Button && control != BtnMenu)
-                    control.Click += CloseSidebarOnClick;
-            }
-        }
-        private void SubscribeFormClickEvent()
-        {
-            this.Click += CloseSidebarOnClick;
-        }
-        private void CloseSidebarOnClick(object? sender, EventArgs e)
-        {
-            panelSidebarS.Visible = false;
-            UnsubscribeEvents();
-        }
-        private void UnsubscribeEvents()
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Button && control != BtnMenu)
-                    control.Click -= CloseSidebarOnClick;
-            }
-            this.Click -= CloseSidebarOnClick;
-        }
-        // Sidebar Animation
-        private void StartSidebarAnimation(bool open)
-        {
-            targetWidth = open ? 60 : 0; // Adjust the target width based on open or close
-            animationTimer.Tag = open;
-            animationTimer.Start();
-            isAnimating = true; // Set the flag to true when the animation starts
-        }
-
-        private void AnimationTimer_Tick(object? sender, EventArgs e)
-        {
-            bool open = (bool)animationTimer.Tag;
-
-            if (open && panelSidebarS.Width < targetWidth)
-            {
-                panelSidebarS.Width += 5; // Adjust the increment value for a smooth animation
-            }
-            else if (!open && panelSidebarS.Width > targetWidth)
-            {
-                panelSidebarS.Width -= 5; // Adjust the increment value for a smooth animation
-            }
-            else
-            {
-                animationTimer.Stop(); // Stop the timer when the animation is complete
-                UnsubscribeEvents(); // Unsubscribe the events
-
-                if (!open)
-                {
-                    panelSidebarS.Visible = false; // Hide the sidebar after closing animation
-                }
-
-                isAnimating = false; // Reset the flag when the animation is complete
-            }
-        }
         // Exit confirmation
         private void StandardCalculator_FormClosing(object sender, FormClosingEventArgs e)
         {
