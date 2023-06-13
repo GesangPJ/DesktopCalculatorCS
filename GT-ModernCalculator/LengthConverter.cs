@@ -18,9 +18,8 @@ namespace GT_ModernCalculator
         private int targetWidth;
         private int currentWidth;
         private System.Windows.Forms.Timer animationTimer;
-
-        // Length Converter need
-        private bool updatingTextProgrammatically = false;
+        
+        // Form Switching need
         private bool switchingToAnotherForm = false;
 
         // Form Closing need
@@ -29,6 +28,13 @@ namespace GT_ModernCalculator
         public LengthConverter()
         {
             InitializeComponent();
+            TxtMilimeter.Text = "0";
+            TxtCentimeter.Text = "0";
+            TxtFoot.Text = "0";
+            TxtInch.Text = "0";
+            TxtMeter.Text = "0";
+            TxtKilometer.Text = "0";
+            TxtMile.Text = "0";
             // Show product version
             LabelVersionL.Text = "V." + ProductVersion;
 
@@ -39,70 +45,40 @@ namespace GT_ModernCalculator
 
         }
         // Length Converter Function
-        private void ConvertLength(double length, string fromUnit, TextBox targetTextBox)
-        {
-            double result = 0;
+        private bool updatingTextProgrammatically = false;
 
-            switch (fromUnit.ToLower())
-            {
-                case "milimeter":
-                    result = length / 1000;
-                    break;
-                case "centimeter":
-                    result = length / 100;
-                    break;
-                case "foot":
-                    result = length * 0.3048;
-                    break;
-                case "inch":
-                    result = length * 0.0254;
-                    break;
-                case "meter":
-                    result = length;
-                    break;
-                case "kilometer":
-                    result = length * 1000;
-                    break;
-                case "mile":
-                    result = length * 1609.34;
-                    break;
-                default:
-                    targetTextBox.Text = "";
-                    return;
-            }
-        }
-        // Clear conversion
-        private void ClearConversionResult()
-        {
-            TxtMilimeter.Text = "0";
-            TxtCentimeter.Text = "0";
-            TxtFoot.Text = "0";
-            TxtInch.Text = "0";
-            TxtMeter.Text = "0";
-            TxtKilometer.Text = "0";
-            TxtMile.Text = "0";
-        }
-        // Textbox change function
-        private void textBox_Changed(object sender, EventArgs e)
+        private void LengthTextChanged(object sender, EventArgs e)
         {
             TextBox sourceTextBox = (TextBox)sender;
-            if (!updatingTextProgrammatically && !string.IsNullOrEmpty(TxtCentimeter.Text))
+
+            if (!updatingTextProgrammatically && !string.IsNullOrEmpty(sourceTextBox.Text))
             {
                 double inputValue;
                 if (double.TryParse(sourceTextBox.Text, out inputValue))
                 {
-                    string sourceunit = sourceTextBox.Name.Substring(3);
+                    // Determine the source unit based on the textbox name
+                    string sourceUnit = sourceTextBox.Name.Substring(3); // Remove "Txt" prefix from textbox name
 
-                    ConvertLength(inputValue, sourceunit, TxtMilimeter);
-                    ConvertLength(inputValue, sourceunit, TxtCentimeter);
-                    ConvertLength(inputValue, sourceunit, TxtFoot);
-                    ConvertLength(inputValue, sourceunit, TxtInch);
-                    ConvertLength(inputValue, sourceunit, TxtMeter);
-                    ConvertLength(inputValue, sourceunit, TxtKilometer);
-                    ConvertLength(inputValue, sourceunit, TxtMile);
+                    // Convert the input value to all other units and update the respective textboxes
+                    foreach (Control control in Controls)
+                    {
+                        if (control is TextBox targetTextBox && targetTextBox.Name.StartsWith("Txt") && targetTextBox != sourceTextBox)
+                        {
+                            string targetUnit = targetTextBox.Name.Substring(3);
+
+                            // Perform conversion from source unit to target unit
+                            double convertedValue = ConvertLength(inputValue, sourceUnit, targetUnit);
+
+                            // Update the target textbox with the converted value
+                            updatingTextProgrammatically = true;
+                            targetTextBox.Text = convertedValue.ToString();
+                            updatingTextProgrammatically = false;
+                        }
+                    }
                 }
                 else
                 {
+                    // Handle invalid input
                     ClearConversionResult();
                 }
             }
@@ -111,6 +87,78 @@ namespace GT_ModernCalculator
                 ClearConversionResult();
             }
         }
+
+        private double ConvertLength(double value, string fromUnit, string toUnit)
+        {
+            double result = 0;
+
+            switch (fromUnit.ToLower())
+            {
+                case "millimeter":
+                    result = value / 1000;
+                    break;
+                case "centimeter":
+                    result = value / 100;
+                    break;
+                case "inch":
+                    result = value * 0.0254;
+                    break;
+                case "meter":
+                    result = value;
+                    break;
+                case "foot":
+                    result = value * 0.3048;
+                    break;
+                case "kilometer":
+                    result = value * 1000;
+                    break;
+                case "mile":
+                    result = value * 1609.34;
+                    break;
+                default:
+                    break;
+            }
+
+            switch (toUnit.ToLower())
+            {
+                case "millimeter":
+                    result *= 1000;
+                    break;
+                case "centimeter":
+                    result *= 100;
+                    break;
+                case "inch":
+                    result /= 0.0254;
+                    break;
+                case "meter":
+                    break;
+                case "foot":
+                    result /= 0.3048;
+                    break;
+                case "kilometer":
+                    result /= 1000;
+                    break;
+                case "mile":
+                    result /= 1609.34;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+
+        private void ClearConversionResult()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox targetTextBox && targetTextBox.Name.StartsWith("Txt"))
+                {
+                    targetTextBox.Text = "";
+                }
+            }
+        }
+      
         // Form Switching
 
         private void BtnScience_Click(object sender, EventArgs e)

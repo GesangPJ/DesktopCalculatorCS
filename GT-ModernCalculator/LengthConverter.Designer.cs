@@ -140,7 +140,6 @@
             TxtMilimeter.TabIndex = 7;
             TxtMilimeter.Text = "0";
             TxtMilimeter.TextAlign = HorizontalAlignment.Right;
-            TxtMilimeter.TextChanged += textBox_Changed;
             // 
             // TxtCentimeter
             // 
@@ -153,7 +152,6 @@
             TxtCentimeter.TabIndex = 8;
             TxtCentimeter.Text = "0";
             TxtCentimeter.TextAlign = HorizontalAlignment.Right;
-            TxtCentimeter.TextChanged += textBox_Changed;
             // 
             // TxtInch
             // 
@@ -166,7 +164,6 @@
             TxtInch.TabIndex = 9;
             TxtInch.Text = "0";
             TxtInch.TextAlign = HorizontalAlignment.Right;
-            TxtInch.TextChanged += textBox_Changed;
             // 
             // TxtMeter
             // 
@@ -179,7 +176,6 @@
             TxtMeter.TabIndex = 10;
             TxtMeter.Text = "0";
             TxtMeter.TextAlign = HorizontalAlignment.Right;
-            TxtMeter.TextChanged += textBox_Changed;
             // 
             // TxtFoot
             // 
@@ -192,7 +188,6 @@
             TxtFoot.TabIndex = 11;
             TxtFoot.Text = "0";
             TxtFoot.TextAlign = HorizontalAlignment.Right;
-            TxtFoot.TextChanged += textBox_Changed;
             // 
             // TxtKilometer
             // 
@@ -205,7 +200,6 @@
             TxtKilometer.TabIndex = 12;
             TxtKilometer.Text = "0";
             TxtKilometer.TextAlign = HorizontalAlignment.Right;
-            TxtKilometer.TextChanged += textBox_Changed;
             // 
             // TxtMile
             // 
@@ -218,7 +212,6 @@
             TxtMile.TabIndex = 13;
             TxtMile.Text = "0";
             TxtMile.TextAlign = HorizontalAlignment.Right;
-            TxtMile.TextChanged += textBox_Changed;
             // 
             // BtnMenuL
             // 
@@ -339,6 +332,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Ubuntu", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4);
             Name = "LengthConverter";
             Text = "Length Converter mode";
