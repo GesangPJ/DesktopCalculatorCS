@@ -305,9 +305,6 @@ namespace GT_ModernCalculator
                     isClosing = false; // Reset the flag
                 }
             }
-        public LengthConverter()
-        {
-            InitializeComponent();
         }
     }
 }
