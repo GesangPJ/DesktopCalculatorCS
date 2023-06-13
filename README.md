@@ -20,6 +20,14 @@ A Desktop calculator app built using Visual Studio 2022
 - ~~Length Converter~~
 
 ## Changelog
+### V.5.1.1-Release
+
+*Major Update V.5*
+
+- Add Main Menu for a new way accessing all features
+- Add Timer Form (Hour : Minute : Second)
+- Fix bugs in Length Converter
+
 ### V.4.0.0-Release
 *Major Update V.4 Length Converter*
 
