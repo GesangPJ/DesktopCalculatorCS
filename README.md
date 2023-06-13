@@ -2,22 +2,85 @@
 
 A Desktop calculator app built using Visual Studio 2022
 
+## Features
+
+### Standard Calculator 🧮
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/calculatorapp.jpg" width = "250" height = "320" >
+
+Standard Calculator with standard arithmetic operation and additional function :
+- Percentage
+- Square
+- Square Root
+- 1/x
+
+----------------------------------------------------------------
+
+### Main Menu
+
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/MainMenuSS.jpg" width ="370" height = "270">
+
+Main Menu form for accessing all features.
+
+
+----------------------------------------------------------------
+### Limited Scientific Calculator  🧪
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sciencecalculator.jpg" width="400" height="350">
 
-<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sidebar.jpg" width="400" height="350">
+Limited Scientific Calculator function :
+  - Mod 
+  - Pi
+  - Sin
+  - Cos
+  - Tan
+  - SinH
+  - CosH
+  - TanH
+  - Bin
+  - Hex
+  - Oct
+  - Exp
+  - In x
+  - Cosec
+----------------------------------------------------------------
+### Temperature Converter  🌡
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/tempertureconverter.jpg" width = "270" height = "320" >
 
+Temperature Converter function to convert between :
+ - Celcius
+ - Farenheit
+ - Kelvin
+----------------------------------------------------------------
+### Length Converter  📏
+
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/lengthconverter.jpg" width = "270" height = "320" >
 
+Length Converter function to convert between :
+   - Millimeter
+   - Centimeter
+   - Inch
+   - Meter
+   - Foot
+   - Kilometer
+   - Mile
+
+----------------------------------------------------------------
+
+### Timer ⏲
+
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/TimerSS.jpg" width ="370" height = "270" >
+
+Timer function in Hour : Minute : Second
 
 ## Features Planning
 - ~~Standard calculator function~~
 - ~~Scientific calculator function~~
 - ~~Temperature Converter~~
 - ~~Length Converter~~
+- ~~Timer~~
+- Area Converter
+- Electricity Converter
 
 ## Changelog
 ### V.5.1.1-Release
