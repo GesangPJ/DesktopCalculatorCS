@@ -14,6 +14,7 @@ namespace GT_ModernCalculator
     public partial class LengthConverter : Form
     {
         private bool updatingTextProgrammatically = false;
+        private bool switchingToAnotherForm = false;
         public LengthConverter()
         {
             InitializeComponent();
@@ -90,6 +91,47 @@ namespace GT_ModernCalculator
             {
                 ClearConversionResult();
             }
+        }
+        // Form Switching
+
+        private void BtnScience_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the ScienceCalculator form
+            ScienceCalculator scienceCalculatorForm = new ScienceCalculator();
+
+            // Hide the current form
+            this.Hide();
+
+            // Show the ScienceCalculator form
+            scienceCalculatorForm.ShowDialog();
+
+            // Close the current form
+            this.Close();
+        }
+        private void BtnTemperature_Click(object sender, EventArgs e)
+        {
+            TemperatureConverter temperatureConverter = new TemperatureConverter();
+
+            this.Hide();
+
+            temperatureConverter.ShowDialog();
+
+            this.Close();
+        }
+        private void BtnStandard_Click(object sender, EventArgs e)
+        {
+            switchingToAnotherForm = true;
+            // Create an instance of the ScienceCalculator form
+            StandardCalculator standardCalculatorForm = new StandardCalculator();
+
+            this.Hide();
+
+            // Show the ScienceCalculator form
+            standardCalculatorForm.ShowDialog();
+
+            // Close the current form
+            this.Close();
+
         }
     }
 }
