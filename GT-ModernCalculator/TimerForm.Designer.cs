@@ -31,12 +31,12 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            TxtHour = new TextBox();
+            TxtMinute = new TextBox();
+            TxtSecond = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            button1 = new Button();
+            BtnStart = new Button();
             SuspendLayout();
             // 
             // label1
@@ -72,44 +72,44 @@
             label3.TabIndex = 2;
             label3.Text = "Seconds";
             // 
-            // textBox1
+            // TxtHour
             // 
-            textBox1.BackColor = Color.FromArgb(32, 32, 32);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Ubuntu", 48F, FontStyle.Underline, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(158, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(96, 92);
-            textBox1.TabIndex = 3;
-            textBox1.Text = "00";
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            TxtHour.BackColor = Color.FromArgb(32, 32, 32);
+            TxtHour.BorderStyle = BorderStyle.None;
+            TxtHour.Font = new Font("Ubuntu", 48F, FontStyle.Underline, GraphicsUnit.Point);
+            TxtHour.ForeColor = Color.White;
+            TxtHour.Location = new Point(158, 129);
+            TxtHour.Name = "TxtHour";
+            TxtHour.Size = new Size(96, 92);
+            TxtHour.TabIndex = 3;
+            TxtHour.Text = "00";
+            TxtHour.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox2
+            // TxtMinute
             // 
-            textBox2.BackColor = Color.FromArgb(32, 32, 32);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Ubuntu", 48F, FontStyle.Underline, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(356, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(96, 92);
-            textBox2.TabIndex = 4;
-            textBox2.Text = "00";
-            textBox2.TextAlign = HorizontalAlignment.Right;
+            TxtMinute.BackColor = Color.FromArgb(32, 32, 32);
+            TxtMinute.BorderStyle = BorderStyle.None;
+            TxtMinute.Font = new Font("Ubuntu", 48F, FontStyle.Underline, GraphicsUnit.Point);
+            TxtMinute.ForeColor = Color.White;
+            TxtMinute.Location = new Point(356, 129);
+            TxtMinute.Name = "TxtMinute";
+            TxtMinute.Size = new Size(96, 92);
+            TxtMinute.TabIndex = 4;
+            TxtMinute.Text = "00";
+            TxtMinute.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox3
+            // TxtSecond
             // 
-            textBox3.BackColor = Color.FromArgb(32, 32, 32);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Ubuntu", 48F, FontStyle.Underline, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(554, 129);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(96, 92);
-            textBox3.TabIndex = 5;
-            textBox3.Text = "00";
-            textBox3.TextAlign = HorizontalAlignment.Right;
+            TxtSecond.BackColor = Color.FromArgb(32, 32, 32);
+            TxtSecond.BorderStyle = BorderStyle.None;
+            TxtSecond.Font = new Font("Ubuntu", 48F, FontStyle.Underline, GraphicsUnit.Point);
+            TxtSecond.ForeColor = Color.White;
+            TxtSecond.Location = new Point(554, 129);
+            TxtSecond.Name = "TxtSecond";
+            TxtSecond.Size = new Size(96, 92);
+            TxtSecond.TabIndex = 5;
+            TxtSecond.Text = "00";
+            TxtSecond.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -133,19 +133,19 @@
             label5.TabIndex = 7;
             label5.Text = ":";
             // 
-            // button1
+            // BtnStart
             // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Ubuntu", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(345, 318);
-            button1.Name = "button1";
-            button1.Size = new Size(119, 49);
-            button1.TabIndex = 8;
-            button1.Text = "START";
-            button1.UseVisualStyleBackColor = false;
+            BtnStart.BackColor = Color.DodgerBlue;
+            BtnStart.FlatAppearance.BorderSize = 0;
+            BtnStart.FlatStyle = FlatStyle.Flat;
+            BtnStart.Font = new Font("Ubuntu", 22.1999989F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnStart.ForeColor = Color.White;
+            BtnStart.Location = new Point(275, 306);
+            BtnStart.Name = "BtnStart";
+            BtnStart.Size = new Size(265, 59);
+            BtnStart.TabIndex = 8;
+            BtnStart.Text = "START";
+            BtnStart.UseVisualStyleBackColor = false;
             // 
             // TimerForm
             // 
@@ -153,16 +153,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(810, 474);
-            Controls.Add(button1);
+            Controls.Add(BtnStart);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtSecond);
+            Controls.Add(TxtMinute);
+            Controls.Add(TxtHour);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Ubuntu", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(4, 4, 4, 4);
             Name = "TimerForm";
             Text = "Timer Mode";
@@ -175,11 +176,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox TxtHour;
+        private TextBox TxtMinute;
+        private TextBox TxtSecond;
         private Label label4;
         private Label label5;
-        private Button button1;
+        private Button BtnStart;
     }
 }
