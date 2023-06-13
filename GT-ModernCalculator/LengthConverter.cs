@@ -20,7 +20,7 @@ namespace GT_ModernCalculator
         private void ConvertLength(double length, string fromUnit, TextBox targetTextBox)
         {
             double result = 0;
-            
+
             switch (fromUnit.ToLower())
             {
                 case "milimeter":
@@ -48,10 +48,9 @@ namespace GT_ModernCalculator
                     targetTextBox.Text = "";
                     return;
             }
-
-
-
         }
+        // Textbox change function
+        
 
     }
 }

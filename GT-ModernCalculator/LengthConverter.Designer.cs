@@ -35,13 +35,13 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            TxtMilimeter = new TextBox();
+            TxtCentimeter = new TextBox();
+            TxtInch = new TextBox();
+            TxtMeter = new TextBox();
+            TxtFoot = new TextBox();
+            TxtKilometer = new TextBox();
+            TxtMile = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -114,89 +114,89 @@
             label7.TabIndex = 6;
             label7.Text = "Miles";
             // 
-            // textBox1
+            // TxtMilimeter
             // 
-            textBox1.BackColor = Color.FromArgb(32, 32, 32);
-            textBox1.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(339, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(166, 27);
-            textBox1.TabIndex = 7;
-            textBox1.Text = "0";
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            TxtMilimeter.BackColor = Color.FromArgb(32, 32, 32);
+            TxtMilimeter.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtMilimeter.ForeColor = Color.White;
+            TxtMilimeter.Location = new Point(339, 40);
+            TxtMilimeter.Name = "TxtMilimeter";
+            TxtMilimeter.Size = new Size(166, 27);
+            TxtMilimeter.TabIndex = 7;
+            TxtMilimeter.Text = "0";
+            TxtMilimeter.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox2
+            // TxtCentimeter
             // 
-            textBox2.BackColor = Color.FromArgb(32, 32, 32);
-            textBox2.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(339, 93);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(166, 27);
-            textBox2.TabIndex = 8;
-            textBox2.Text = "0";
-            textBox2.TextAlign = HorizontalAlignment.Right;
+            TxtCentimeter.BackColor = Color.FromArgb(32, 32, 32);
+            TxtCentimeter.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtCentimeter.ForeColor = Color.White;
+            TxtCentimeter.Location = new Point(339, 93);
+            TxtCentimeter.Name = "TxtCentimeter";
+            TxtCentimeter.Size = new Size(166, 27);
+            TxtCentimeter.TabIndex = 8;
+            TxtCentimeter.Text = "0";
+            TxtCentimeter.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox3
+            // TxtInch
             // 
-            textBox3.BackColor = Color.FromArgb(32, 32, 32);
-            textBox3.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(339, 144);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(166, 27);
-            textBox3.TabIndex = 9;
-            textBox3.Text = "0";
-            textBox3.TextAlign = HorizontalAlignment.Right;
+            TxtInch.BackColor = Color.FromArgb(32, 32, 32);
+            TxtInch.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtInch.ForeColor = Color.White;
+            TxtInch.Location = new Point(339, 144);
+            TxtInch.Name = "TxtInch";
+            TxtInch.Size = new Size(166, 27);
+            TxtInch.TabIndex = 9;
+            TxtInch.Text = "0";
+            TxtInch.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox4
+            // TxtMeter
             // 
-            textBox4.BackColor = Color.FromArgb(32, 32, 32);
-            textBox4.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(339, 195);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(166, 27);
-            textBox4.TabIndex = 10;
-            textBox4.Text = "0";
-            textBox4.TextAlign = HorizontalAlignment.Right;
+            TxtMeter.BackColor = Color.FromArgb(32, 32, 32);
+            TxtMeter.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtMeter.ForeColor = Color.White;
+            TxtMeter.Location = new Point(339, 195);
+            TxtMeter.Name = "TxtMeter";
+            TxtMeter.Size = new Size(166, 27);
+            TxtMeter.TabIndex = 10;
+            TxtMeter.Text = "0";
+            TxtMeter.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox5
+            // TxtFoot
             // 
-            textBox5.BackColor = Color.FromArgb(32, 32, 32);
-            textBox5.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(339, 246);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(166, 27);
-            textBox5.TabIndex = 11;
-            textBox5.Text = "0";
-            textBox5.TextAlign = HorizontalAlignment.Right;
+            TxtFoot.BackColor = Color.FromArgb(32, 32, 32);
+            TxtFoot.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtFoot.ForeColor = Color.White;
+            TxtFoot.Location = new Point(339, 246);
+            TxtFoot.Name = "TxtFoot";
+            TxtFoot.Size = new Size(166, 27);
+            TxtFoot.TabIndex = 11;
+            TxtFoot.Text = "0";
+            TxtFoot.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox6
+            // TxtKilometer
             // 
-            textBox6.BackColor = Color.FromArgb(32, 32, 32);
-            textBox6.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.ForeColor = Color.White;
-            textBox6.Location = new Point(339, 297);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(166, 27);
-            textBox6.TabIndex = 12;
-            textBox6.Text = "0";
-            textBox6.TextAlign = HorizontalAlignment.Right;
+            TxtKilometer.BackColor = Color.FromArgb(32, 32, 32);
+            TxtKilometer.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtKilometer.ForeColor = Color.White;
+            TxtKilometer.Location = new Point(339, 297);
+            TxtKilometer.Name = "TxtKilometer";
+            TxtKilometer.Size = new Size(166, 27);
+            TxtKilometer.TabIndex = 12;
+            TxtKilometer.Text = "0";
+            TxtKilometer.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox7
+            // TxtMile
             // 
-            textBox7.BackColor = Color.FromArgb(32, 32, 32);
-            textBox7.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.ForeColor = Color.White;
-            textBox7.Location = new Point(339, 348);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(166, 27);
-            textBox7.TabIndex = 13;
-            textBox7.Text = "0";
-            textBox7.TextAlign = HorizontalAlignment.Right;
+            TxtMile.BackColor = Color.FromArgb(32, 32, 32);
+            TxtMile.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtMile.ForeColor = Color.White;
+            TxtMile.Location = new Point(339, 348);
+            TxtMile.Name = "TxtMile";
+            TxtMile.Size = new Size(166, 27);
+            TxtMile.TabIndex = 13;
+            TxtMile.Text = "0";
+            TxtMile.TextAlign = HorizontalAlignment.Right;
             // 
             // LengthConverter
             // 
@@ -204,13 +204,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(556, 562);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TxtMile);
+            Controls.Add(TxtKilometer);
+            Controls.Add(TxtFoot);
+            Controls.Add(TxtMeter);
+            Controls.Add(TxtInch);
+            Controls.Add(TxtCentimeter);
+            Controls.Add(TxtMilimeter);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -219,7 +219,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Ubuntu", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "LengthConverter";
             Text = "Length Converter mode";
             ResumeLayout(false);
@@ -235,12 +235,12 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox TxtMilimeter;
+        private TextBox TxtCentimeter;
+        private TextBox TxtInch;
+        private TextBox TxtMeter;
+        private TextBox TxtFoot;
+        private TextBox TxtKilometer;
+        private TextBox TxtMile;
     }
 }
