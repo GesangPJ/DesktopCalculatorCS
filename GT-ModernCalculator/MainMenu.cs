@@ -20,6 +20,9 @@ namespace GT_ModernCalculator
         {
             InitializeComponent();
         }
+        // Form Switching
+
+        // Length Converter Form
         private void LengthConverter_Click(object sender, EventArgs e)
         {
             // LengthConverter Form
@@ -31,7 +34,6 @@ namespace GT_ModernCalculator
 
             this.Close();
         }
-        // Form Switching
 
         // Standard Calculator Form
         private void BtnStandard_Click(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace GT_ModernCalculator
         // Science Calculator Form
         private void BtnScience_Click(object sender, EventArgs e)
         {
-            
+
             ScienceCalculator scienceCalculatorForm = new ScienceCalculator();
 
             // Hide the current form
@@ -78,6 +80,44 @@ namespace GT_ModernCalculator
             this.Close();
         }
 
-        
+        // Timer Form
+
+        private void BtnTimer_Click(object sender, EventArgs e)
+        {
+            TimerForm timerForm = new TimerForm();
+
+            this.Hide();
+
+            timerForm.ShowDialog();
+
+            this.Close();
+        }
+
+        // Exit Function
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isClosing && e.CloseReason == CloseReason.UserClosing)
+            {
+                isClosing = true;
+
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;  // Allow the form to close
+                    isClosing = false; // Reset the flag
+
+                    // Exit the application
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;   // Cancel the closing action
+                    isClosing = false; // Reset the flag
+                }
+            }
+        }
+
+
     }
 }

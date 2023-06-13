@@ -41,6 +41,16 @@ namespace GT_ModernCalculator
 
 
         }
+        private void BtnMainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenuForm = new MainMenu();
+
+            this.Hide();
+
+            mainMenuForm.ShowDialog();
+
+            this.Close();
+        }
         // Switch between Forms of calculator
         private void LengthConverter_Click(object sender, EventArgs e)
         {

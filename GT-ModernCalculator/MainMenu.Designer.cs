@@ -50,6 +50,7 @@
             BtnLength.TabIndex = 7;
             toolTip1.SetToolTip(BtnLength, "Length Converter");
             BtnLength.UseVisualStyleBackColor = true;
+            BtnLength.Click += LengthConverter_Click;
             // 
             // BtnFormTemp
             // 
@@ -63,6 +64,7 @@
             BtnFormTemp.TabIndex = 6;
             toolTip1.SetToolTip(BtnFormTemp, "Temperature Converter");
             BtnFormTemp.UseVisualStyleBackColor = true;
+            BtnFormTemp.Click += BtnTemperature_Click;
             // 
             // BtnFormScience
             // 
@@ -76,6 +78,7 @@
             BtnFormScience.TabIndex = 5;
             toolTip1.SetToolTip(BtnFormScience, "Scientific Calculator");
             BtnFormScience.UseVisualStyleBackColor = true;
+            BtnFormScience.Click += BtnScience_Click;
             // 
             // BtnFormCalculator
             // 
@@ -89,6 +92,7 @@
             BtnFormCalculator.TabIndex = 4;
             toolTip1.SetToolTip(BtnFormCalculator, "Standard Calculator");
             BtnFormCalculator.UseVisualStyleBackColor = true;
+            BtnFormCalculator.Click += BtnStandard_Click;
             // 
             // button1
             // 
@@ -102,6 +106,7 @@
             button1.TabIndex = 8;
             toolTip1.SetToolTip(button1, "Timer");
             button1.UseVisualStyleBackColor = true;
+            button1.Click += BtnTimer_Click;
             // 
             // MainMenu
             // 
@@ -117,7 +122,7 @@
             Font = new Font("Ubuntu", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "MainMenu";
             Text = "Main Menu";
             ResumeLayout(false);

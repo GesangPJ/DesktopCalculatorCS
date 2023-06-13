@@ -31,6 +31,16 @@ namespace GT_ModernCalculator
             animationTimer.Tick += AnimationTimer_Tick;
         }
         // Form Switching Function
+        private void BtnMainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenuForm = new MainMenu();
+
+            this.Hide();
+
+            mainMenuForm.ShowDialog();
+
+            this.Close();
+        }
         private void LengthConverter_Click(object sender, EventArgs e)
         {
             // LengthConverter Form
