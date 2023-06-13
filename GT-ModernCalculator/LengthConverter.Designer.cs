@@ -342,6 +342,7 @@
             Margin = new Padding(4);
             Name = "LengthConverter";
             Text = "Length Converter mode";
+            FormClosing += LengthConverter_FormClosing;
             panelSidebarL.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
