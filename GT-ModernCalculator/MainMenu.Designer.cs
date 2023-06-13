@@ -35,6 +35,7 @@
             BtnFormScience = new Button();
             BtnFormCalculator = new Button();
             toolTip1 = new ToolTip(components);
+            button1 = new Button();
             SuspendLayout();
             // 
             // BtnLength
@@ -89,12 +90,26 @@
             toolTip1.SetToolTip(BtnFormCalculator, "Standard Calculator");
             BtnFormCalculator.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.Silver;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(122, 179);
+            button1.Name = "button1";
+            button1.Size = new Size(60, 70);
+            button1.TabIndex = 8;
+            toolTip1.SetToolTip(button1, "Timer");
+            button1.UseVisualStyleBackColor = true;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(603, 373);
+            Controls.Add(button1);
             Controls.Add(BtnLength);
             Controls.Add(BtnFormTemp);
             Controls.Add(BtnFormScience);
@@ -115,5 +130,6 @@
         private Button BtnFormScience;
         private Button BtnFormCalculator;
         private ToolTip toolTip1;
+        private Button button1;
     }
 }
