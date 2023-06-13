@@ -28,7 +28,7 @@ namespace GT_ModernCalculator
         public LengthConverter()
         {
             InitializeComponent();
-            TxtMilimeter.Text = "0";
+            TxtMillimeter.Text = "0";
             TxtCentimeter.Text = "0";
             TxtFoot.Text = "0";
             TxtInch.Text = "0";

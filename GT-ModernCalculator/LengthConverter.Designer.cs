@@ -37,7 +37,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            TxtMilimeter = new TextBox();
+            TxtMillimeter = new TextBox();
             TxtCentimeter = new TextBox();
             TxtInch = new TextBox();
             TxtMeter = new TextBox();
@@ -129,18 +129,18 @@
             label7.TabIndex = 6;
             label7.Text = "Miles";
             // 
-            // TxtMilimeter
+            // TxtMillimeter
             // 
-            TxtMilimeter.BackColor = Color.FromArgb(32, 32, 32);
-            TxtMilimeter.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TxtMilimeter.ForeColor = Color.White;
-            TxtMilimeter.Location = new Point(258, 78);
-            TxtMilimeter.Name = "TxtMilimeter";
-            TxtMilimeter.Size = new Size(166, 27);
-            TxtMilimeter.TabIndex = 7;
-            TxtMilimeter.Text = "0";
-            TxtMilimeter.TextAlign = HorizontalAlignment.Right;
-            TxtMilimeter.TextChanged += LengthTextChanged;
+            TxtMillimeter.BackColor = Color.FromArgb(32, 32, 32);
+            TxtMillimeter.Font = new Font("Ubuntu", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TxtMillimeter.ForeColor = Color.White;
+            TxtMillimeter.Location = new Point(258, 78);
+            TxtMillimeter.Name = "TxtMillimeter";
+            TxtMillimeter.Size = new Size(166, 27);
+            TxtMillimeter.TabIndex = 7;
+            TxtMillimeter.Text = "0";
+            TxtMillimeter.TextAlign = HorizontalAlignment.Right;
+            TxtMillimeter.TextChanged += LengthTextChanged;
             // 
             // TxtCentimeter
             // 
@@ -233,6 +233,7 @@
             BtnMenuL.TabIndex = 14;
             toolTip1.SetToolTip(BtnMenuL, "Menu");
             BtnMenuL.UseVisualStyleBackColor = false;
+            BtnMenuL.Click += BtnMenuL_Click;
             // 
             // LabelVersionL
             // 
@@ -330,7 +331,7 @@
             Controls.Add(TxtMeter);
             Controls.Add(TxtInch);
             Controls.Add(TxtCentimeter);
-            Controls.Add(TxtMilimeter);
+            Controls.Add(TxtMillimeter);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -358,7 +359,7 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox TxtMilimeter;
+        private TextBox TxtMillimeter;
         private TextBox TxtCentimeter;
         private TextBox TxtInch;
         private TextBox TxtMeter;
