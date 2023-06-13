@@ -63,13 +63,13 @@ namespace GT_ModernCalculator
             TxtMile.Text = "0";
         }
         // Textbox change function
-        private void TxtMilimeter_Changed(object sender, EventArgs e)
+        private void textBox_Changed(object sender, EventArgs e)
         {
             TextBox sourceTextBox = (TextBox)sender;
             if (!updatingTextProgrammatically && !string.IsNullOrEmpty(TxtCentimeter.Text))
             {
                 double inputValue;
-                if(double.TryParse(sourceTextBox.Text, out inputValue))
+                if (double.TryParse(sourceTextBox.Text, out inputValue))
                 {
                     string sourceunit = sourceTextBox.Name.Substring(3);
 
