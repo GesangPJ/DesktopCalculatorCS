@@ -532,7 +532,6 @@
             BtnLength.TabIndex = 3;
             toolTip5.SetToolTip(BtnLength, "Length Converter");
             BtnLength.UseVisualStyleBackColor = true;
-            BtnLength.Click += LengthConverter_Click;
             // 
             // BtnFormTemp
             // 
@@ -546,7 +545,6 @@
             BtnFormTemp.TabIndex = 2;
             toolTip4.SetToolTip(BtnFormTemp, "Temperature Converter");
             BtnFormTemp.UseVisualStyleBackColor = true;
-            BtnFormTemp.Click += BtnTemperature_Click;
             // 
             // BtnFormScience
             // 
@@ -560,7 +558,6 @@
             BtnFormScience.TabIndex = 1;
             toolTip3.SetToolTip(BtnFormScience, "Scientific Calculator");
             BtnFormScience.UseVisualStyleBackColor = true;
-            BtnFormScience.Click += BtnScience_Click;
             // 
             // BtnFormCalculator
             // 
