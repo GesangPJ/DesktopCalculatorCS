@@ -163,6 +163,7 @@
             BtnMenuTM.Size = new Size(63, 50);
             BtnMenuTM.TabIndex = 9;
             BtnMenuTM.UseVisualStyleBackColor = false;
+            BtnMenuTM.Click += BtnMainMenu_Click;
             // 
             // VersionLabelTM
             // 
@@ -197,6 +198,7 @@
             Margin = new Padding(4);
             Name = "TimerForm";
             Text = "Timer Mode";
+            FormClosing += TimerForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

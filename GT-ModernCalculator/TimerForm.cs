@@ -12,6 +12,8 @@ namespace GT_ModernCalculator
 {
     public partial class TimerForm : Form
     {
+        //Form Closing need
+        private bool isClosing = false;
         public TimerForm()
         {
             InitializeComponent();
@@ -52,7 +54,40 @@ namespace GT_ModernCalculator
 
             timer.Start();
         }
+        // Switch to Main Menu
+        private void BtnMainMenu_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenuForm = new MainMenu();
 
+            this.Hide();
+
+            mainMenuForm.ShowDialog();
+
+            this.Close();
+        }
+
+        private void TimerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isClosing && e.CloseReason == CloseReason.UserClosing)
+            {
+                isClosing = true;
+
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;  // Allow the form to close
+                    isClosing = false; // Reset the flag
+
+                    // Exit the application
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;   // Cancel the closing action
+                    isClosing = false; // Reset the flag
+                }
+            }
+        }
 
     }
 }
