@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace GT_ModernCalculator
 {
     public partial class LengthConverter : Form
     {
+        private bool updatingTextProgrammatically = false;
         public LengthConverter()
         {
             InitializeComponent();
@@ -49,8 +51,45 @@ namespace GT_ModernCalculator
                     return;
             }
         }
+        // Clear conversion
+        private void ClearConversionResult()
+        {
+            TxtMilimeter.Text = "0";
+            TxtCentimeter.Text = "0";
+            TxtFoot.Text = "0";
+            TxtInch.Text = "0";
+            TxtMeter.Text = "0";
+            TxtKilometer.Text = "0";
+            TxtMile.Text = "0";
+        }
         // Textbox change function
-        
+        private void TxtMilimeter_Changed(object sender, EventArgs e)
+        {
+            TextBox sourceTextBox = (TextBox)sender;
+            if (!updatingTextProgrammatically && !string.IsNullOrEmpty(TxtCentimeter.Text))
+            {
+                double inputValue;
+                if(double.TryParse(sourceTextBox.Text, out inputValue))
+                {
+                    string sourceunit = sourceTextBox.Name.Substring(3);
 
+                    ConvertLength(inputValue, sourceunit, TxtMilimeter);
+                    ConvertLength(inputValue, sourceunit, TxtCentimeter);
+                    ConvertLength(inputValue, sourceunit, TxtFoot);
+                    ConvertLength(inputValue, sourceunit, TxtInch);
+                    ConvertLength(inputValue, sourceunit, TxtMeter);
+                    ConvertLength(inputValue, sourceunit, TxtKilometer);
+                    ConvertLength(inputValue, sourceunit, TxtMile);
+                }
+                else
+                {
+                    ClearConversionResult();
+                }
+            }
+            else if (!updatingTextProgrammatically)
+            {
+                ClearConversionResult();
+            }
+        }
     }
 }
