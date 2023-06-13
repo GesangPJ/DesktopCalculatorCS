@@ -38,16 +38,10 @@
             TxtFarenheit = new TextBox();
             TxtKelvin = new TextBox();
             LabelVersionT = new Label();
-            panelSidebarT = new Panel();
-            BtnLengthST = new Button();
-            BtnFormTemp = new Button();
-            BtnFormScience = new Button();
-            BtnFormCalculator = new Button();
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
             toolTip4 = new ToolTip(components);
-            panelSidebarT.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -151,77 +145,12 @@
             LabelVersionT.TabIndex = 12;
             LabelVersionT.Text = "0";
             // 
-            // panelSidebarT
-            // 
-            panelSidebarT.BackColor = Color.FromArgb(24, 24, 24);
-            panelSidebarT.Controls.Add(BtnLengthST);
-            panelSidebarT.Controls.Add(BtnFormTemp);
-            panelSidebarT.Controls.Add(BtnFormScience);
-            panelSidebarT.Controls.Add(BtnFormCalculator);
-            panelSidebarT.Location = new Point(1, 53);
-            panelSidebarT.Name = "panelSidebarT";
-            panelSidebarT.Size = new Size(63, 345);
-            panelSidebarT.TabIndex = 31;
-            panelSidebarT.Visible = false;
-            // 
-            // BtnLengthST
-            // 
-            BtnLengthST.FlatAppearance.BorderSize = 0;
-            BtnLengthST.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnLengthST.FlatStyle = FlatStyle.Flat;
-            BtnLengthST.Image = (Image)resources.GetObject("BtnLengthST.Image");
-            BtnLengthST.Location = new Point(0, 243);
-            BtnLengthST.Name = "BtnLengthST";
-            BtnLengthST.Size = new Size(60, 70);
-            BtnLengthST.TabIndex = 65;
-            BtnLengthST.UseVisualStyleBackColor = true;
-            // 
-            // BtnFormTemp
-            // 
-            BtnFormTemp.FlatAppearance.BorderSize = 0;
-            BtnFormTemp.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnFormTemp.FlatStyle = FlatStyle.Flat;
-            BtnFormTemp.Image = (Image)resources.GetObject("BtnFormTemp.Image");
-            BtnFormTemp.Location = new Point(0, 167);
-            BtnFormTemp.Name = "BtnFormTemp";
-            BtnFormTemp.Size = new Size(60, 70);
-            BtnFormTemp.TabIndex = 2;
-            toolTip4.SetToolTip(BtnFormTemp, "Temperature Converter");
-            BtnFormTemp.UseVisualStyleBackColor = true;
-            // 
-            // BtnFormScience
-            // 
-            BtnFormScience.FlatAppearance.BorderSize = 0;
-            BtnFormScience.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnFormScience.FlatStyle = FlatStyle.Flat;
-            BtnFormScience.Image = (Image)resources.GetObject("BtnFormScience.Image");
-            BtnFormScience.Location = new Point(0, 84);
-            BtnFormScience.Name = "BtnFormScience";
-            BtnFormScience.Size = new Size(60, 70);
-            BtnFormScience.TabIndex = 1;
-            toolTip3.SetToolTip(BtnFormScience, "Sceintific Calculator");
-            BtnFormScience.UseVisualStyleBackColor = true;
-            // 
-            // BtnFormCalculator
-            // 
-            BtnFormCalculator.FlatAppearance.BorderSize = 0;
-            BtnFormCalculator.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnFormCalculator.FlatStyle = FlatStyle.Flat;
-            BtnFormCalculator.Image = (Image)resources.GetObject("BtnFormCalculator.Image");
-            BtnFormCalculator.Location = new Point(0, 8);
-            BtnFormCalculator.Name = "BtnFormCalculator";
-            BtnFormCalculator.Size = new Size(60, 70);
-            BtnFormCalculator.TabIndex = 0;
-            toolTip2.SetToolTip(BtnFormCalculator, "Standard Calculator");
-            BtnFormCalculator.UseVisualStyleBackColor = true;
-            // 
             // TemperatureConverter
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(427, 396);
-            Controls.Add(panelSidebarT);
             Controls.Add(LabelVersionT);
             Controls.Add(TxtKelvin);
             Controls.Add(TxtFarenheit);
@@ -234,7 +163,6 @@
             Name = "TemperatureConverter";
             Text = "Temperature Converter Mode";
             FormClosing += TemperatureConverter_FormClosing;
-            panelSidebarT.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,14 +177,9 @@
         private TextBox TxtFarenheit;
         private TextBox TxtKelvin;
         private Label LabelVersionT;
-        private Panel panelSidebarT;
-        private Button BtnFormTemp;
-        private Button BtnFormScience;
-        private Button BtnFormCalculator;
         private ToolTip toolTip1;
         private ToolTip toolTip4;
         private ToolTip toolTip3;
         private ToolTip toolTip2;
-        private Button BtnLengthST;
     }
 }
