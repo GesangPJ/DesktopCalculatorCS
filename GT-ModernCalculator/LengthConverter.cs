@@ -18,6 +18,7 @@ namespace GT_ModernCalculator
         public LengthConverter()
         {
             InitializeComponent();
+
         }
         // Length Converter Function
         private void ConvertLength(double length, string fromUnit, TextBox targetTextBox)
