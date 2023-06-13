@@ -58,17 +58,11 @@
             BtnDot = new Button();
             BtnPlusMinus = new Button();
             toolTip1 = new ToolTip(components);
-            panelSidebarS = new Panel();
-            BtnLength = new Button();
-            BtnFormTemp = new Button();
-            BtnFormScience = new Button();
-            BtnFormCalculator = new Button();
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
             toolTip4 = new ToolTip(components);
             LabelVersionStandard = new Label();
             toolTip5 = new ToolTip(components);
-            panelSidebarS.SuspendLayout();
             SuspendLayout();
             // 
             // BtnMenu
@@ -507,71 +501,6 @@
             BtnPlusMinus.UseVisualStyleBackColor = false;
             BtnPlusMinus.Click += PlusMinusButton_Click;
             // 
-            // panelSidebarS
-            // 
-            panelSidebarS.BackColor = Color.FromArgb(24, 24, 24);
-            panelSidebarS.Controls.Add(BtnLength);
-            panelSidebarS.Controls.Add(BtnFormTemp);
-            panelSidebarS.Controls.Add(BtnFormScience);
-            panelSidebarS.Controls.Add(BtnFormCalculator);
-            panelSidebarS.Location = new Point(2, 48);
-            panelSidebarS.Name = "panelSidebarS";
-            panelSidebarS.Size = new Size(63, 411);
-            panelSidebarS.TabIndex = 30;
-            panelSidebarS.Visible = false;
-            // 
-            // BtnLength
-            // 
-            BtnLength.FlatAppearance.BorderSize = 0;
-            BtnLength.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnLength.FlatStyle = FlatStyle.Flat;
-            BtnLength.Image = (Image)resources.GetObject("BtnLength.Image");
-            BtnLength.Location = new Point(0, 243);
-            BtnLength.Name = "BtnLength";
-            BtnLength.Size = new Size(60, 70);
-            BtnLength.TabIndex = 3;
-            toolTip5.SetToolTip(BtnLength, "Length Converter");
-            BtnLength.UseVisualStyleBackColor = true;
-            // 
-            // BtnFormTemp
-            // 
-            BtnFormTemp.FlatAppearance.BorderSize = 0;
-            BtnFormTemp.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnFormTemp.FlatStyle = FlatStyle.Flat;
-            BtnFormTemp.Image = (Image)resources.GetObject("BtnFormTemp.Image");
-            BtnFormTemp.Location = new Point(0, 167);
-            BtnFormTemp.Name = "BtnFormTemp";
-            BtnFormTemp.Size = new Size(60, 70);
-            BtnFormTemp.TabIndex = 2;
-            toolTip4.SetToolTip(BtnFormTemp, "Temperature Converter");
-            BtnFormTemp.UseVisualStyleBackColor = true;
-            // 
-            // BtnFormScience
-            // 
-            BtnFormScience.FlatAppearance.BorderSize = 0;
-            BtnFormScience.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnFormScience.FlatStyle = FlatStyle.Flat;
-            BtnFormScience.Image = (Image)resources.GetObject("BtnFormScience.Image");
-            BtnFormScience.Location = new Point(0, 84);
-            BtnFormScience.Name = "BtnFormScience";
-            BtnFormScience.Size = new Size(60, 70);
-            BtnFormScience.TabIndex = 1;
-            toolTip3.SetToolTip(BtnFormScience, "Scientific Calculator");
-            BtnFormScience.UseVisualStyleBackColor = true;
-            // 
-            // BtnFormCalculator
-            // 
-            BtnFormCalculator.FlatAppearance.BorderSize = 0;
-            BtnFormCalculator.FlatAppearance.MouseOverBackColor = Color.Silver;
-            BtnFormCalculator.FlatStyle = FlatStyle.Flat;
-            BtnFormCalculator.Image = (Image)resources.GetObject("BtnFormCalculator.Image");
-            BtnFormCalculator.Location = new Point(0, 8);
-            BtnFormCalculator.Name = "BtnFormCalculator";
-            BtnFormCalculator.Size = new Size(60, 70);
-            BtnFormCalculator.TabIndex = 0;
-            toolTip2.SetToolTip(BtnFormCalculator, "Standard Calculator");
-            BtnFormCalculator.UseVisualStyleBackColor = true;
-            // 
             // LabelVersionStandard
             // 
             LabelVersionStandard.AutoSize = true;
@@ -591,7 +520,6 @@
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(440, 460);
             Controls.Add(LabelVersionStandard);
-            Controls.Add(panelSidebarS);
             Controls.Add(BtnPlusMinus);
             Controls.Add(BtnDot);
             Controls.Add(BtnZero);
@@ -623,7 +551,6 @@
             Name = "StandardCalculator";
             Text = "C# Calculator";
             FormClosing += StandardCalculator_FormClosing;
-            panelSidebarS.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -657,15 +584,10 @@
         private Button BtnDot;
         private Button BtnPlusMinus;
         private ToolTip toolTip1;
-        private Panel panelSidebarS;
-        private Button BtnFormScience;
-        private Button BtnFormCalculator;
-        private Button BtnFormTemp;
         private ToolTip toolTip4;
         private ToolTip toolTip3;
         private ToolTip toolTip2;
         private Label LabelVersionStandard;
-        private Button BtnLength;
         private ToolTip toolTip5;
     }
 }
