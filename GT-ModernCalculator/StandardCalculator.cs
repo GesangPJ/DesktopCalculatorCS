@@ -4,14 +4,14 @@ namespace GT_ModernCalculator
 {
     public partial class StandardCalculator : Form
     {
-        //private ScienceCalculator scienceCalculatorForm;
-        private System.Windows.Forms.Timer animationTimer;
+        // Number initializing
         private double currentResult = 0.0;
         private double previousNumber = 0.0;
         private string operation = "";
         private bool isOperationPerformed = false;
         private bool isModSelected = false;
-        private bool switchingToAnotherForm = false;
+
+        //Form Closing need
         private bool isClosing = false;
 
 
@@ -19,7 +19,6 @@ namespace GT_ModernCalculator
         {
 
             InitializeComponent();
-            //scienceCalculatorForm = new ScienceCalculator();
             //Display App Product Version
             LabelVersionStandard.Text = "V." + ProductVersion + "-Release";
         }
@@ -32,43 +31,6 @@ namespace GT_ModernCalculator
             this.Hide();
 
             mainMenuForm.ShowDialog();
-
-            this.Close();
-        }
-
-        private void LengthConverter_Click(object sender, EventArgs e)
-        {
-            // LengthConverter Form
-            LengthConverter lengthConverterForm = new LengthConverter();
-
-            this.Hide();
-
-            lengthConverterForm.ShowDialog();
-
-            this.Close();
-        }
-
-        private void BtnScience_Click(object sender, EventArgs e)
-        {
-            // Create a new instance of the ScienceCalculator form
-            ScienceCalculator scienceCalculatorForm = new ScienceCalculator();
-
-            // Hide the current form
-            this.Hide();
-
-            // Show the ScienceCalculator form
-            scienceCalculatorForm.ShowDialog();
-
-            // Close the current form
-            this.Close();
-        }
-        private void BtnTemperature_Click(object sender, EventArgs e)
-        {
-            TemperatureConverter temperatureConverter = new TemperatureConverter();
-
-            this.Hide();
-
-            temperatureConverter.ShowDialog();
 
             this.Close();
         }
