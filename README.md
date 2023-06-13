@@ -8,12 +8,16 @@ A Desktop calculator app built using Visual Studio 2022
 
 <img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/sidebar.jpg" width="400" height="350">
 
-<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/tempertureconverter.jpg" width = "250" height = "320" >
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/tempertureconverter.jpg" width = "270" height = "320" >
+
+<img src="https://github.com/GesangPJ/DesktopCalculatorCS/blob/master/lengthconverter.jpg" width = "270" height = "320" >
+
 
 ## Features Planning
 - ~~Standard calculator function~~
 - ~~Scientific calculator function~~
 - ~~Temperature Converter~~
+- ~~Length Converter~~
 
 ## Changelog
 ### V.4.0.0-Release
