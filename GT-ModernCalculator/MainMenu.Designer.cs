@@ -36,6 +36,7 @@
             BtnFormCalculator = new Button();
             toolTip1 = new ToolTip(components);
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // BtnLength
@@ -108,12 +109,26 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += BtnTimer_Click;
             // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseOverBackColor = Color.Silver;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(212, 179);
+            button2.Name = "button2";
+            button2.Size = new Size(60, 70);
+            button2.TabIndex = 9;
+            toolTip1.SetToolTip(button2, "More Features Coming...");
+            button2.UseVisualStyleBackColor = true;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             ClientSize = new Size(603, 373);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(BtnLength);
             Controls.Add(BtnFormTemp);
@@ -136,5 +151,6 @@
         private Button BtnFormCalculator;
         private ToolTip toolTip1;
         private Button button1;
+        private Button button2;
     }
 }
