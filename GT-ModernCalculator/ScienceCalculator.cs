@@ -19,7 +19,11 @@ namespace GT_ModernCalculator
         private double previousNumber = 0.0;
         private string operation = "";
         private bool isOperationPerformed = false;
+
+        // Mod and Cosec operation status
         private bool isModSelected = false;
+        private bool IsCosecSelected = false;
+
         //Exit Form Need
         private bool isClosing = false;
 
@@ -50,7 +54,7 @@ namespace GT_ModernCalculator
                 // Ignore multiple decimal points
                 return;
             }
-
+            // Mod Operation init
             if (operation == "Mod")
             {
                 if (isOperationPerformed)
@@ -62,6 +66,19 @@ namespace GT_ModernCalculator
                 TxtOut0S.Text += button.Text;
                 TxtOut1S.Text += button.Text;
             }
+            // Cosec operation init
+            /*
+            if (operation == "cosec")
+            {
+                if (isOperationPerformed)
+                {
+                    TxtOut0S.Clear();
+                    isOperationPerformed = false;
+                }
+                TxtOut0S.Text += button.Text;
+                TxtOut1S.Text += button.Text;
+            }
+            */
             else
             {
                 if (TxtOut0S.Text == "0" || isOperationPerformed)
@@ -263,7 +280,34 @@ namespace GT_ModernCalculator
                     ClearAll();
                     return;
                 }
+
             }
+            /*
+            else if (operation == "cosec")
+            {
+                if(!string.IsNullOrEmpty(TxtOut0S.Text))
+                {
+                    double currentNumber;
+
+                    if(double.TryParse(TxtOut0S.Text, out currentNumber))
+                    {
+                        TxtOut1S.Text += currentNumber.ToString() + "Cosec";
+                        IsCosecSelected = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid input! Please enter a valid number.");
+                        ClearAll();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please enter a number before selecting Mod operation.");
+                    return;
+                }
+            }
+            */
             else if (operation == "Sin")
             {
                 double currentNumber;
@@ -476,6 +520,29 @@ namespace GT_ModernCalculator
         {
             operation = "cosec";
             OperationButton_Click(sender, e);
+            /*
+            if (!string.IsNullOrEmpty(TxtOut0S.Text))
+            {
+                double currentNumber;
+                if(double.TryParse(TxtOut0S.Text, out currentNumber))
+                {
+                    TxtOut1S.Text = currentNumber.ToString() + "Cosec";
+                    operation = "cosec";
+                    isOperationPerformed = true;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please enter a valid number.");
+                    ClearAll();
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid input! Please enter a number before selecting Mod operation.");
+                return;
+            }
+            */
         }
         private void BtnInx_Click(Object sender, EventArgs e)
         {
