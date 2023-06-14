@@ -516,33 +516,22 @@ namespace GT_ModernCalculator
             operation = "Tan";
             OperationButton_Click(sender, e);
         }
-        private void BtnCosec_Click(Object sender, EventArgs e)
+        private void BtnCosec_Click(object sender, EventArgs e)
         {
-            operation = "cosec";
-            OperationButton_Click(sender, e);
-            /*
-            if (!string.IsNullOrEmpty(TxtOut0S.Text))
+            double currentNumber;
+
+            if (double.TryParse(TxtOut0S.Text, out currentNumber))
             {
-                double currentNumber;
-                if(double.TryParse(TxtOut0S.Text, out currentNumber))
-                {
-                    TxtOut1S.Text = currentNumber.ToString() + "Cosec";
-                    operation = "cosec";
-                    isOperationPerformed = true;
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a valid number.");
-                    ClearAll();
-                    return;
-                }
+                double result = 1 / Math.Sin(currentNumber);
+                TxtOut0S.Text = result.ToString();
+                TxtOut1S.Text = $"Cosec({currentNumber})";
             }
             else
             {
-                MessageBox.Show("Invalid input! Please enter a number before selecting Mod operation.");
+                MessageBox.Show("Invalid input! Please enter a valid number.");
+                ClearAll();
                 return;
             }
-            */
         }
         private void BtnInx_Click(Object sender, EventArgs e)
         {
