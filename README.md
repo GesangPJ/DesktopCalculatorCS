@@ -83,6 +83,13 @@ Timer function in Hour : Minute : Second
 - Electricity Converter
 
 ## Changelog
+### V.5.1.5 Patch Update
+
+*Update Patch 5.1.5*
+
+- Working Cosecant operation
+- Fix Science Calculator form display bug
+- 
 ### V.5.1.1-Release
 
 *Major Update V.5*
