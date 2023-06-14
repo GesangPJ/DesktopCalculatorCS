@@ -20,9 +20,9 @@ namespace GT_ModernCalculator
         private string operation = "";
         private bool isOperationPerformed = false;
 
-        // Mod and Cosec operation status
+        // Mod operation status
         private bool isModSelected = false;
-        private bool IsCosecSelected = false;
+        //private bool IsCosecSelected = false;
 
         //Exit Form Need
         private bool isClosing = false;
@@ -34,6 +34,7 @@ namespace GT_ModernCalculator
             //Display App Product Version
             LabelVersion.Text = "V." + ProductVersion + "-Release";
         }
+        // Function to switch to Main Menu
         private void BtnMainMenu_Click(object sender, EventArgs e)
         {
             MainMenu mainMenuForm = new MainMenu();
@@ -66,19 +67,6 @@ namespace GT_ModernCalculator
                 TxtOut0S.Text += button.Text;
                 TxtOut1S.Text += button.Text;
             }
-            // Cosec operation init
-            /*
-            if (operation == "cosec")
-            {
-                if (isOperationPerformed)
-                {
-                    TxtOut0S.Clear();
-                    isOperationPerformed = false;
-                }
-                TxtOut0S.Text += button.Text;
-                TxtOut1S.Text += button.Text;
-            }
-            */
             else
             {
                 if (TxtOut0S.Text == "0" || isOperationPerformed)
@@ -91,7 +79,9 @@ namespace GT_ModernCalculator
             }
         }
 
-        //Calculation / Equation Operation here
+        //Calculation
+
+        // When button operation clicked, also define function for other operation
         private void OperationButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -122,6 +112,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation SquareNumber
             else if (operation == "x^2")
             {
                 double currentNumber;
@@ -138,6 +129,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation SquareRoot
             else if (operation == "√")
             {
                 double currentNumber;
@@ -163,6 +155,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation Hexadecimal
             else if (operation == "Hex")
             {
                 double currentNumber;
@@ -180,6 +173,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation Octal
             else if (operation == "Oct")
             {
                 double currentNumber;
@@ -197,6 +191,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation Bin
             else if (operation == "Bin")
             {
                 double currentNumber;
@@ -214,6 +209,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation Mod
             else if (operation == "Mod")
             {
                 if (!string.IsNullOrEmpty(TxtOut0S.Text))
@@ -238,6 +234,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation In x
             else if (operation == "In x")
             {
                 double currentNumber;
@@ -263,7 +260,7 @@ namespace GT_ModernCalculator
                     ClearAll();
                     return;
                 }
-            }
+            }/*
             else if (operation == "cosec")
             {
                 double currentNumber;
@@ -281,33 +278,8 @@ namespace GT_ModernCalculator
                     return;
                 }
 
-            }
-            /*
-            else if (operation == "cosec")
-            {
-                if(!string.IsNullOrEmpty(TxtOut0S.Text))
-                {
-                    double currentNumber;
-
-                    if(double.TryParse(TxtOut0S.Text, out currentNumber))
-                    {
-                        TxtOut1S.Text += currentNumber.ToString() + "Cosec";
-                        IsCosecSelected = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid input! Please enter a valid number.");
-                        ClearAll();
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a number before selecting Mod operation.");
-                    return;
-                }
-            }
-            */
+            }*/
+            // Operation Sin
             else if (operation == "Sin")
             {
                 double currentNumber;
@@ -325,6 +297,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation Cos
             else if (operation == "Cos")
             {
                 double currentNumber;
@@ -342,6 +315,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation Tan
             else if (operation == "Tan")
             {
                 double currentNumber;
@@ -359,6 +333,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation SinH
             else if (operation == "SinH")
             {
                 double currentNumber;
@@ -376,6 +351,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation CosH
             else if (operation == "CosH")
             {
                 double currentNumber;
@@ -393,6 +369,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation TanH
             else if (operation == "TanH")
             {
                 double currentNumber;
@@ -410,6 +387,7 @@ namespace GT_ModernCalculator
                     return;
                 }
             }
+            // Operation exp
             else if (operation == "Exp")
             {
                 double currentNumber;
@@ -581,7 +559,7 @@ namespace GT_ModernCalculator
             }
         }
 
-        // Standard Calculator Button Operation
+        // When equal button clicked
         private void EqualButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(TxtOut1S.Text) && !string.IsNullOrEmpty(TxtOut0S.Text))
@@ -636,7 +614,7 @@ namespace GT_ModernCalculator
 
             isOperationPerformed = true;
         }
-
+        // Operation 1/x
         private void OneOverXButton_Click(object sender, EventArgs e)
         {
             double currentNumber;
@@ -662,6 +640,7 @@ namespace GT_ModernCalculator
                 return;
             }
         }
+        // Operation x^2
         private void SquareButton_Click(object sender, EventArgs e)
         {
             double currentNumber;
@@ -678,6 +657,7 @@ namespace GT_ModernCalculator
                 return;
             }
         }
+        //Operation SquareRoot
         private void SquareRootButton_Click(object sender, EventArgs e)
         {
             double currentNumber;
@@ -703,6 +683,7 @@ namespace GT_ModernCalculator
                 return;
             }
         }
+        // Operation Percent
         private void PercentageButton_Click(object sender, EventArgs e)
         {
             double currentNumber;
@@ -719,6 +700,8 @@ namespace GT_ModernCalculator
                 ClearAll();
             }
         }
+
+        // Convert number to positive or negative
         private void PlusMinusButton_Click(object sender, EventArgs e)
         {
             double currentNumber;
@@ -736,15 +719,21 @@ namespace GT_ModernCalculator
         }
 
         // Non Number And Calculation Button Operation
+
+        // Clear field
         private void BtnClear_Click(object sender, EventArgs e)
         {
             ClearAll();
         }
+
+        //Clear Entry only
         private void BtnClearEntry_Click(object sender, EventArgs e)
         {
             TxtOut0S.Text = "0";
             //TxtOut1S.Text = "0";
         }
+
+        // Clear all field and operation
         private void ClearAll()
         {
             TxtOut0S.Text = "0";
@@ -773,7 +762,7 @@ namespace GT_ModernCalculator
                     return operation;
             }
         }
-
+        // Remove one number at a time
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(TxtOut1S.Text))
@@ -800,7 +789,7 @@ namespace GT_ModernCalculator
                 }
             }
         }
-
+        // Input decimal
         private void DecimalButton_Click(object sender, EventArgs e)
         {
             if (!TxtOut0S.Text.Contains("."))
