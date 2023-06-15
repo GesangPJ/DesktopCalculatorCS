@@ -15,7 +15,6 @@ namespace GT_ModernCalculator
         //Form handle
         private bool isClosing = false;
 
-
         public TemperatureConverter()
         {
             InitializeComponent();
