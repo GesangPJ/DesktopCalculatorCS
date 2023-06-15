@@ -57,7 +57,8 @@ namespace GT_ModernCalculator
                     MessageBox.Show("Timer completed!");
 
                     // Play timer sound
-                    string soundFilePath = Path.Combine(Application.StartupPath, "sound", "kitchen-timer.wav");
+                    string soundFilePath = @"C:\Users\Gesang Paudra Jaya\source\repos\GT-ModernCalculator\GT-ModernCalculator\sound\kitchen-timer.wav";
+
                     timerWaveOut = new WaveOutEvent();
                     AudioFileReader audioFileReader = new AudioFileReader(soundFilePath);
                     timerWaveOut.Init(audioFileReader);
