@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using NAudio.Wave;
 using Timer = System.Windows.Forms.Timer;
 
@@ -56,14 +57,14 @@ namespace GT_ModernCalculator
                     MessageBox.Show("Timer completed!");
 
                     // Play timer sound
-                    string soundFilePath = @"sound\kitchen-timer.wav";
-                    string absolutePath = System.IO.Path.Combine(Application.StartupPath, soundFilePath);
+                    string soundFilePath = Path.Combine(Application.StartupPath, "sound", "kitchen-timer.wav");
                     timerWaveOut = new WaveOutEvent();
-                    AudioFileReader audioFileReader = new AudioFileReader(absolutePath);
+                    AudioFileReader audioFileReader = new AudioFileReader(soundFilePath);
                     timerWaveOut.Init(audioFileReader);
                     timerWaveOut.Play();
                 }
             };
+
             timer.Start();
         }
 
