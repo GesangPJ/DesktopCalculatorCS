@@ -31,7 +31,7 @@ namespace GT_ModernCalculator
             //Show product version
             VersionLabelTM.Text = "V." + ProductVersion;
         }
-        
+        #region Timer Function
         private void btnStartTimer_Click(object sender, EventArgs e)
         {
             int hours = int.Parse(TxtHour.Text);
@@ -109,6 +109,8 @@ namespace GT_ModernCalculator
                 isTimerCompleted = false; // Reset the flag for subsequent timer runs
             }
         }
+        #endregion
+
         // Switch to Main Menu
         private void BtnMainMenu_Click(object sender, EventArgs e)
         {
