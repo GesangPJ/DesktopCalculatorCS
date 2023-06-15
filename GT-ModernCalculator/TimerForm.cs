@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using System.IO;
 using NAudio.Wave;
 using Timer = System.Windows.Forms.Timer;
+using System.Security.Policy;
+using System.Windows.Documents;
 
 namespace GT_ModernCalculator
 {
     public partial class TimerForm : Form
     {
+        // 
         // Audio player
         private WaveOutEvent timerWaveOut;
 
@@ -27,6 +30,8 @@ namespace GT_ModernCalculator
 
             VersionLabelTM.Text = "V." + ProductVersion;
         }
+        private bool isTimerCompleted = false;
+
         private void btnStartTimer_Click(object sender, EventArgs e)
         {
             int hours = int.Parse(TxtHour.Text);
@@ -51,14 +56,14 @@ namespace GT_ModernCalculator
                     TxtMinute.Text = remainingMinutes.ToString("D2");
                     TxtSecond.Text = remainingSeconds.ToString("D2");
                 }
-                else
+                else if (!isTimerCompleted)
                 {
+                    isTimerCompleted = true;
                     timer.Stop();
                     MessageBox.Show("Timer completed!");
 
                     // Play timer sound
                     string soundFilePath = @"C:\Users\Gesang Paudra Jaya\source\repos\GT-ModernCalculator\GT-ModernCalculator\sound\kitchen-timer.wav";
-
                     timerWaveOut = new WaveOutEvent();
                     AudioFileReader audioFileReader = new AudioFileReader(soundFilePath);
                     timerWaveOut.Init(audioFileReader);
@@ -71,8 +76,12 @@ namespace GT_ModernCalculator
 
         private void MessageBox_OK_Click(object sender, EventArgs e)
         {
-            // Stop timer sound
-            timerWaveOut?.Stop();
+            // Stop timer sound if the timer has completed
+            if (isTimerCompleted)
+            {
+                timerWaveOut?.Stop();
+                isTimerCompleted = false; // Reset the flag for subsequent timer runs
+            }
         }
         // Switch to Main Menu
         private void BtnMainMenu_Click(object sender, EventArgs e)
