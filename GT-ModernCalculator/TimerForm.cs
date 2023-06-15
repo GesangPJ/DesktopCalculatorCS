@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
-
-
 namespace GT_ModernCalculator
 {
     public partial class TimerForm : Form
@@ -56,7 +54,7 @@ namespace GT_ModernCalculator
                     MessageBox.Show("Timer completed!");
 
                     // Play timer sound
-                    timerSoundPlayer = new SoundPlayer(@"sound/kitchen-timer.wav");
+                    timerSoundPlayer = new SoundPlayer("sound/kitchen-timer.wav");
                     timerSoundPlayer.Play();
                 }
             };
