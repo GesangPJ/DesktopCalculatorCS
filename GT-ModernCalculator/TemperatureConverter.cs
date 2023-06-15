@@ -34,7 +34,7 @@ namespace GT_ModernCalculator
             this.Close();
         }
 
-        //Temperature Converter Function
+        #region TemperatureConverter Function
         //Celcius Calculation
         private bool updatingTextProgrammatically = false;
         private void TxtCelcius_TextChanged(object sender, EventArgs e)
@@ -135,6 +135,7 @@ namespace GT_ModernCalculator
                 TxtFarenheit.Text = "";
             }
         }
+        #endregion
 
         // Exit Confirmation
         private void TemperatureConverter_FormClosing(object sender, FormClosingEventArgs e)
