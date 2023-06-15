@@ -9,12 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace GT_ModernCalculator
 {
     public partial class ScienceCalculator : Form
     {
-        //Calculation Initializing
+        #region Calculation Initializing
         private double currentResult = 0.0;
         private double previousNumber = 0.0;
         private string operation = "";
@@ -22,11 +21,10 @@ namespace GT_ModernCalculator
 
         // Mod operation status
         private bool isModSelected = false;
-        //private bool IsCosecSelected = false;
-
+        
         //Exit Form Need
         private bool isClosing = false;
-
+        #endregion
         public ScienceCalculator()
         {
 
@@ -78,8 +76,7 @@ namespace GT_ModernCalculator
                 TxtOut0S.Text += button.Text;
             }
         }
-
-        //Calculation
+        #region Calculation Function And Operation
 
         // When button operation clicked, also define function for other operation
         private void OperationButton_Click(object sender, EventArgs e)
@@ -260,25 +257,7 @@ namespace GT_ModernCalculator
                     ClearAll();
                     return;
                 }
-            }/*
-            else if (operation == "cosec")
-            {
-                double currentNumber;
-
-                if (double.TryParse(TxtOut0S.Text, out currentNumber))
-                {
-                    double result = 1 / Math.Sin(currentNumber);
-                    TxtOut0S.Text = result.ToString();
-                    TxtOut1S.Text = $"Cosec ({currentNumber})";
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input! Please enter a valid number.");
-                    ClearAll();
-                    return;
-                }
-
-            }*/
+            }
             // Operation Sin
             else if (operation == "Sin")
             {
@@ -423,6 +402,9 @@ namespace GT_ModernCalculator
 
             isOperationPerformed = true;
         }
+        #endregion
+
+        #region ScienceCalculator Button Click
         // Science calculator button operation
         private void BtnExp_Click(Object sender, EventArgs e)
         {
@@ -717,6 +699,7 @@ namespace GT_ModernCalculator
                 ClearAll();
             }
         }
+        #endregion
 
         // Non Number And Calculation Button Operation
 
@@ -820,9 +803,5 @@ namespace GT_ModernCalculator
                 }
             }
         }
-
-
-
-
     }
 }
