@@ -4,16 +4,15 @@ namespace GT_ModernCalculator
 {
     public partial class StandardCalculator : Form
     {
-        // Number initializing
+        #region Calculation Init
         private double currentResult = 0.0;
         private double previousNumber = 0.0;
         private string operation = "";
         private bool isOperationPerformed = false;
         private bool isModSelected = false;
-
+        #endregion
         //Form Closing need
         private bool isClosing = false;
-
 
         public StandardCalculator()
         {
@@ -35,7 +34,7 @@ namespace GT_ModernCalculator
             this.Close();
         }
 
-        // Calculation function
+        #region Calculation function
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -68,7 +67,44 @@ namespace GT_ModernCalculator
                 TxtOut0.Text += button.Text;
             }
         }
+        private void PercentageButton_Click(object sender, EventArgs e)
+        {
+            double currentNumber;
 
+            if (double.TryParse(TxtOut0.Text, out currentNumber))
+            {
+                currentNumber = currentNumber / 100;
+                TxtOut0.Text = currentNumber.ToString();
+                TxtOut1.Text = currentNumber.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Invalid input! Please enter a valid number.");
+                ClearAll();
+            }
+        }
+        private void PlusMinusButton_Click(object sender, EventArgs e)
+        {
+            double currentNumber;
+
+            if (double.TryParse(TxtOut0.Text, out currentNumber))
+            {
+                currentNumber *= -1;
+                TxtOut0.Text = currentNumber.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Invalid input! Please enter a valid number.");
+                ClearAll();
+            }
+        }
+        private void DecimalButton_Click(object sender, EventArgs e)
+        {
+            if (!TxtOut0.Text.Contains("."))
+            {
+                TxtOut0.Text += ".";
+            }
+        }
         private void OperationButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -281,6 +317,8 @@ namespace GT_ModernCalculator
                 return;
             }
         }
+        #endregion
+
         private void BtnClear_Click(object sender, EventArgs e)
         {
             ClearAll();
@@ -343,46 +381,6 @@ namespace GT_ModernCalculator
                 }
             }
         }
-
-        private void PercentageButton_Click(object sender, EventArgs e)
-        {
-            double currentNumber;
-
-            if (double.TryParse(TxtOut0.Text, out currentNumber))
-            {
-                currentNumber = currentNumber / 100;
-                TxtOut0.Text = currentNumber.ToString();
-                TxtOut1.Text = currentNumber.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Invalid input! Please enter a valid number.");
-                ClearAll();
-            }
-        }
-        private void PlusMinusButton_Click(object sender, EventArgs e)
-        {
-            double currentNumber;
-
-            if (double.TryParse(TxtOut0.Text, out currentNumber))
-            {
-                currentNumber *= -1;
-                TxtOut0.Text = currentNumber.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Invalid input! Please enter a valid number.");
-                ClearAll();
-            }
-        }
-        private void DecimalButton_Click(object sender, EventArgs e)
-        {
-            if (!TxtOut0.Text.Contains("."))
-            {
-                TxtOut0.Text += ".";
-            }
-        }
-
         // Exit confirmation
         private void StandardCalculator_FormClosing(object sender, FormClosingEventArgs e)
         {
