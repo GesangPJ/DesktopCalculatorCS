@@ -1,7 +1,5 @@
 # C# Desktop Calculator
 
-A Desktop calculator app built using Visual Studio 2022
-
 ## Features
 
 ### 1. Standard Calculator 🧮
@@ -153,3 +151,6 @@ Timer function in Hour : Minute : Second
 ### V.1.0.0-Release
  *First release*
 - Standard calculator function
+
+
+
