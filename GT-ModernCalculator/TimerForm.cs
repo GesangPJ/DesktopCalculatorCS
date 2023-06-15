@@ -4,17 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
 using Timer = System.Windows.Forms.Timer;
 
 namespace GT_ModernCalculator
 {
     public partial class TimerForm : Form
     {
-        private SoundPlayer timerSoundPlayer;
+        // Audio player
+        private WaveOutEvent timerWaveOut;
+
         //Form Closing need
         private bool isClosing = false;
         public TimerForm()
@@ -54,18 +56,21 @@ namespace GT_ModernCalculator
                     MessageBox.Show("Timer completed!");
 
                     // Play timer sound
-                    timerSoundPlayer = new SoundPlayer("sound/kitchen-timer.wav");
-                    timerSoundPlayer.Play();
+                    string soundFilePath = @"sound\kitchen-timer.wav";
+                    string absolutePath = System.IO.Path.Combine(Application.StartupPath, soundFilePath);
+                    timerWaveOut = new WaveOutEvent();
+                    AudioFileReader audioFileReader = new AudioFileReader(absolutePath);
+                    timerWaveOut.Init(audioFileReader);
+                    timerWaveOut.Play();
                 }
             };
-
             timer.Start();
         }
-        // Dialog Box
+
         private void MessageBox_OK_Click(object sender, EventArgs e)
         {
             // Stop timer sound
-            timerSoundPlayer?.Stop();
+            timerWaveOut?.Stop();
         }
         // Switch to Main Menu
         private void BtnMainMenu_Click(object sender, EventArgs e)
