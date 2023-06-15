@@ -17,7 +17,8 @@ namespace GT_ModernCalculator
 {
     public partial class TimerForm : Form
     {
-        // 
+        // sound file
+        private string soundfile = @"C:\Users\Gesang Paudra Jaya\source\repos\GT-ModernCalculator\GT-ModernCalculator\sound\kitchen-timer.wav";
         // Audio player
         private WaveOutEvent timerWaveOut;
 
@@ -30,6 +31,7 @@ namespace GT_ModernCalculator
 
             VersionLabelTM.Text = "V." + ProductVersion;
         }
+        // Determine if timer is completed
         private bool isTimerCompleted = false;
 
         private void btnStartTimer_Click(object sender, EventArgs e)
@@ -56,18 +58,30 @@ namespace GT_ModernCalculator
                     TxtMinute.Text = remainingMinutes.ToString("D2");
                     TxtSecond.Text = remainingSeconds.ToString("D2");
                 }
-                else if (!isTimerCompleted)
+                else
                 {
-                    isTimerCompleted = true;
                     timer.Stop();
-                    MessageBox.Show("Timer completed!");
-
                     // Play timer sound
-                    string soundFilePath = @"C:\Users\Gesang Paudra Jaya\source\repos\GT-ModernCalculator\GT-ModernCalculator\sound\kitchen-timer.wav";
+                    string soundFilePath = soundfile;
                     timerWaveOut = new WaveOutEvent();
                     AudioFileReader audioFileReader = new AudioFileReader(soundFilePath);
                     timerWaveOut.Init(audioFileReader);
                     timerWaveOut.Play();
+
+                    // Show dialog box
+                    using (var messageForm = new Form())
+                    {
+                        messageForm.Text = "Timer Completed!";
+                        messageForm.StartPosition = FormStartPosition.CenterParent;
+                        messageForm.FormClosed += (sender, args) =>
+                        {
+                            // Stop timer sound when the dialog box is closed
+                            timerWaveOut.Stop();
+                            timerWaveOut.Dispose();
+                        };
+
+                        messageForm.ShowDialog();
+                    }
                 }
             };
 
