@@ -81,11 +81,10 @@ Timer function in Hour : Minute : Second
 - Electricity Converter
 
 ## Changelog
-### 5.2.7 
-
+### V.5.2.7 
 *Update patch V.5.2.7*
 
-- Add sound to Timer features
+- Add Timer Sound
 - Publish app to 2 versions :
 
     - Self-Contained (include.NET Framework / larger file)  [-DotNet.Ready.exe] : 
