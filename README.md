@@ -1,7 +1,5 @@
 # C# Desktop Calculator
 
-A Desktop calculator app built using Visual Studio 2022
-
 ## Features
 
 ### 1. Standard Calculator 🧮
@@ -83,6 +81,18 @@ Timer function in Hour : Minute : Second
 - Electricity Converter
 
 ## Changelog
+### 5.2.7 
+
+*Update patch V.5.2.7*
+
+- Add sound to Timer features
+- Publish app to 2 versions :
+
+    - Self-Contained (include.NET Framework / larger file)  [-DotNet.Ready.exe] : 
+        - .NET Included
+        -  ReadyToRun Application
+    - Framework dependent (smaller file)
+  
 ### V.5.1.5 Patch Update
 
 *Update Patch 5.1.5*
@@ -152,4 +162,6 @@ Timer function in Hour : Minute : Second
 
 ### V.1.0.0-Release
  *First release*
-- Standard calculator function
+- Standard calculator function.
+
+
