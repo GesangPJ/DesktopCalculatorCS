@@ -98,7 +98,7 @@ Timer function in Hour : Minute : Second
 
 - Working Cosecant operation
 - Fix Science Calculator form display bug
-- 
+
 ### V.5.1.1-Release
 
 *Major Update V.5*
