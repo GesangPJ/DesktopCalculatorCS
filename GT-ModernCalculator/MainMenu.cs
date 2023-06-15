@@ -23,7 +23,7 @@ namespace GT_ModernCalculator
             //Show Product Version
             VersionLabelM.Text = "V." + ProductVersion;
         }
-        // Form Switching
+        #region FormSwitching Function
 
         // Length Converter Form
         private void LengthConverter_Click(object sender, EventArgs e)
@@ -95,9 +95,9 @@ namespace GT_ModernCalculator
 
             this.Close();
         }
+        #endregion
 
         // Exit Function
-
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClosing && e.CloseReason == CloseReason.UserClosing)
@@ -120,7 +120,5 @@ namespace GT_ModernCalculator
                 }
             }
         }
-
-
     }
 }
