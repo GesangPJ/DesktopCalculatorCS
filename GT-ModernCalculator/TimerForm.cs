@@ -62,9 +62,8 @@ namespace GT_ModernCalculator
                 {
                     timer.Stop();
                     // Play timer sound
-                    string soundFilePath = soundfile;
                     timerWaveOut = new WaveOutEvent();
-                    AudioFileReader audioFileReader = new AudioFileReader(soundFilePath);
+                    AudioFileReader audioFileReader = new AudioFileReader(soundfile);
                     timerWaveOut.Init(audioFileReader);
                     timerWaveOut.Play();
 
@@ -73,12 +72,23 @@ namespace GT_ModernCalculator
                     {
                         messageForm.Text = "Timer Completed!";
                         messageForm.StartPosition = FormStartPosition.CenterParent;
-                        messageForm.FormClosed += (sender, args) =>
+                        messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                        messageForm.MinimizeBox = false;
+                        messageForm.MaximizeBox = false;
+
+                        Button okButton = new Button();
+                        okButton.Text = "OK";
+                        okButton.DialogResult = DialogResult.OK;
+                        okButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+                        okButton.Click += (sender, args) =>
                         {
-                            // Stop timer sound when the dialog box is closed
+                            // Stop timer sound when the OK button is clicked
                             timerWaveOut.Stop();
                             timerWaveOut.Dispose();
+                            messageForm.Close();
                         };
+
+                        messageForm.Controls.Add(okButton);
 
                         messageForm.ShowDialog();
                     }
