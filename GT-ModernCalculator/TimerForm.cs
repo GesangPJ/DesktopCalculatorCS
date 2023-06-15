@@ -4,14 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
+
+
 
 namespace GT_ModernCalculator
 {
     public partial class TimerForm : Form
     {
+        private SoundPlayer timerSoundPlayer;
         //Form Closing need
         private bool isClosing = false;
         public TimerForm()
@@ -29,7 +34,7 @@ namespace GT_ModernCalculator
 
             int totalTimeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
 
-            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            Timer timer = new Timer();
             timer.Interval = 1000; // Set the interval to 1 second (1000 milliseconds)
             timer.Tick += (s, args) =>
             {
@@ -49,10 +54,20 @@ namespace GT_ModernCalculator
                 {
                     timer.Stop();
                     MessageBox.Show("Timer completed!");
+
+                    // Play timer sound
+                    timerSoundPlayer = new SoundPlayer(@"sound/kitchen-timer.wav");
+                    timerSoundPlayer.Play();
                 }
             };
 
             timer.Start();
+        }
+        // Dialog Box
+        private void MessageBox_OK_Click(object sender, EventArgs e)
+        {
+            // Stop timer sound
+            timerSoundPlayer?.Stop();
         }
         // Switch to Main Menu
         private void BtnMainMenu_Click(object sender, EventArgs e)
