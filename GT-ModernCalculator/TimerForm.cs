@@ -87,6 +87,12 @@ namespace GT_ModernCalculator
                             timerWaveOut.Dispose();
                             messageForm.Close();
                         };
+                        int buttonWidth = 75;
+                        int buttonHeight = 30;
+                        int buttonTop = (messageForm.ClientSize.Height - buttonHeight) / 2;
+                        int buttonLeft = (messageForm.ClientSize.Width - buttonWidth) / 2;
+                        okButton.Size = new Size(buttonWidth, buttonHeight);
+                        okButton.Location = new Point(buttonLeft, buttonTop);
 
                         messageForm.Controls.Add(okButton);
 
