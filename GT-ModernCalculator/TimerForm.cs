@@ -21,19 +21,17 @@ namespace GT_ModernCalculator
         private string soundfile = @"C:\Users\Gesang Paudra Jaya\source\repos\GT-ModernCalculator\GT-ModernCalculator\sound\kitchen-timer.wav";
         // Audio player
         private WaveOutEvent timerWaveOut;
-
+        // Determine if timer is completed
+        private bool isTimerCompleted = false;
         //Form Closing need
         private bool isClosing = false;
         public TimerForm()
         {
             InitializeComponent();
             //Show product version
-
             VersionLabelTM.Text = "V." + ProductVersion;
         }
-        // Determine if timer is completed
-        private bool isTimerCompleted = false;
-
+        
         private void btnStartTimer_Click(object sender, EventArgs e)
         {
             int hours = int.Parse(TxtHour.Text);
@@ -100,10 +98,8 @@ namespace GT_ModernCalculator
                     }
                 }
             };
-
             timer.Start();
         }
-
         private void MessageBox_OK_Click(object sender, EventArgs e)
         {
             // Stop timer sound if the timer has completed
@@ -124,7 +120,7 @@ namespace GT_ModernCalculator
 
             this.Close();
         }
-
+        // Exit function
         private void TimerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClosing && e.CloseReason == CloseReason.UserClosing)
